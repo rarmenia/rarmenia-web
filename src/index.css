@@ -8,6 +8,25 @@ body {
     padding: 0;
 }
 
+::-webkit-scrollbar {
+    width: .5rem;
+    border-radius: .125rem;
+}
+
+::-webkit-scrollbar-track {
+    background: hsla(226, 100%, 7%, 0.20);
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsla(226, 100%, 7%, .6);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsla(226, 100%, 7%, .9);
+}
+
+
 #root {
     height: 100vh;
     min-height: 100vh;

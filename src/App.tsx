@@ -1,11 +1,8 @@
 import React from 'react';
-import Layout from "./core/layout/Layout";
+import AppRoutes from './core/AppRoutes';
 
 function App() {
-  return (
-      <Layout>
-      </Layout>
-  );
+  return (<AppRoutes />);
 }
 
 export default App;
