@@ -1,5 +1,4 @@
 import { LayoutState } from "./state";
-import {Action} from 'redux';
 
 export const SET_LAYOUT = '[Layout] Set State';
 export const UPDATE_LAYOUT = '[Layout] Update State'
@@ -15,6 +14,3 @@ export const updateLayout = (layoutState: Partial<LayoutState>) => {
 };
 
 export type LayoutActions = typeof SET_LAYOUT | typeof UPDATE_LAYOUT;
-export interface LayoutAction extends Action<LayoutActions> {
-  newState: Partial<LayoutState>
-}
