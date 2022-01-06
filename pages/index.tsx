@@ -4,7 +4,7 @@ import {useDispatch} from 'react-redux';
 import {useEffect} from 'react';
 import {setLayout} from '../redux/layout/actions';
 
-const Home: NextPage = () => {
+function Home() {
 
   const dispatch = useDispatch();
 
