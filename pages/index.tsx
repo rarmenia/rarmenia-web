@@ -44,7 +44,7 @@ function Home() {
       <title>Rei Armenia ⎔ Front-End Developer</title>
     </Head>
     <Image
-      src='/img/winooski.jpg'
+      src="/img/winooski.jpg"
       alt={'Image of Winooski River'}
       layout={'fill'}
       objectFit={'cover'}
@@ -54,14 +54,24 @@ function Home() {
     <main
       className={'w-screen h-screen flex items-center justify-center bg-stone-800 overflow-hidden'}
     >
-      <div className={'w-full h-auto md:w-2/3 md:h-auto'}>
-        <Card>
-          <div className={'flex flex-col items-center justify-center'}>
-            <Typography type='title' style={{weight: 'light', className:'text-stone-800'}}>
-              <span className='text-amber-600'>{info?.name?.first}</span>
-              <span>&nbsp;{info?.name.last}</span>
-            </Typography>
-            <Typography type='subtitle' text={info?.profession} style={{weight: 'semibold', className:'text-stone-700'}} />
+      <div className={'w-full h-auto md:w-auto'}>
+        <Card className={'md:mx-20'}>
+          <div className={'flex flex-row items-center justify-center gap-16'}>
+            <div className={'flex flex-col items-center justify-center my-8'}>
+              <div className={'bg-amber-600 w-44 h-44 rounded-full'}/>
+            </div>
+            <div className={'flex flex-col items-center justify-center'}>
+              <Typography type="title" style={{weight: 'light', className: 'text-stone-800'}}>
+                <span className="text-amber-600">{info?.name?.first}</span>
+                <span>&nbsp;{info?.name.last}</span>
+              </Typography>
+              <Typography type="subtitle" text={info?.profession}
+                          style={{weight: 'semibold', className: 'text-stone-700'}}/>
+              <div className={'flex flex-col items-center mt-10'}>
+                <Typography type='paragraph' text={info?.work?.employer} style={{weight: 'semibold', className:'text-stone-800 text-[1rem]'}}/>
+                <Typography type='paragraph' text={info?.work?.division} style={{weight: 'light', className:'text-stone-700 text-[.75rem]'}}/>
+              </div>
+            </div>
           </div>
         </Card>
       </div>
