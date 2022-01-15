@@ -1,10 +1,9 @@
 import React from 'react';
 import {TypographyTypes, Weights} from './types';
-import {RequireOnlyOne} from '../../utils/interface';
 import {fontWeightMap, typeDefaultStyleMap, typeTagMap} from './class-maps';
 
 
-interface PropsIntermediate {
+interface TextProps {
 
   type: TypographyTypes;
 
@@ -14,14 +13,24 @@ interface PropsIntermediate {
     className?: string;
   };
 
-  //Can have 'text' or 'children' not both.
-  text?: string;
-  children?: React.ReactNode;
+
+  text: string;
 }
 
-type Props = RequireOnlyOne<PropsIntermediate, 'text' | 'children'>;
+interface ChildrenProps {
 
-function buildTypographyClasses(props: Props): string[] {
+  type: TypographyTypes;
+
+  style?: {
+    weight?: Weights;
+    skipTypeStyle?: boolean;
+    className?: string;
+  };
+
+  children: React.ReactNode,
+}
+
+function buildTypographyClasses(props: TextProps | ChildrenProps): string[] {
   return [
     ...props.style?.skipTypeStyle ? [] : [typeDefaultStyleMap.get(props.type) ?? ''],
     ...props.style?.weight ? [fontWeightMap.get(props.style.weight) ?? ''] : [],
@@ -29,13 +38,14 @@ function buildTypographyClasses(props: Props): string[] {
   ];
 }
 
-export function Typography(props: Props): JSX.Element {
+export default function Typography(props: TextProps | ChildrenProps): JSX.Element {
 
   const target = typeTagMap.get(props.type) ?? 'span';
   const Tag = `${target}` as keyof JSX.IntrinsicElements;
 
+
   return (<Tag className={buildTypographyClasses(props).join(' ')}>
-    {props.children ? props.children : props.text ? props.text : ''}
-  </Tag>)
+    {'children' in props ? props.children : 'text' in props ? props.text : ''}
+  </Tag>);
 }
 
