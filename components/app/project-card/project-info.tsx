@@ -25,6 +25,15 @@ export default function ProjectInfo(props: Props): JSX.Element {
               <span className={'text-amber-700'}>{props.project.role ?? ''}</span>
             </Typography>
           )}
+          {(props.project.technologies?.length ?? 0) > 0 && (<div className={'flex-row flex gap-1 flex-wrap'}>
+            {props.project.technologies.map((tech, index) => {
+              return (<div key={index}>
+                <Typography type={'text'} text={tech} style={{weight: 'thin', className: 'text-sm text-stone-600'}}/>
+                {(index + 1 < props.project.technologies.length) && (
+                  <span className="text-sm text-stone-600"> •</span>)}
+              </div>);
+            })}
+          </div>)}
         </div>
         <div className={'flex flex-col mt-4'}>
           <Typography type={'paragraph'} style={{weight: 'thin', className: 'text-[.9rem]'}}>

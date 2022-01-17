@@ -1,7 +1,7 @@
 import {Job} from '../../../interfaces/job';
 import Card from '../../generics/card';
 import Typography from '../../generics/typography';
-import ProjectInto from './project-info';
+import {ProjectInfo} from '../project-card';
 
 import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/solid';
 
@@ -80,7 +80,7 @@ export default function JobCard(props: Props): JSX.Element {
                       return (
                         <div key={index}
                              className={'flex flex-row align-start justify-start pb-8 my-5 border-l-2 border-amber-600 pl-8 border-dashed'}>
-                          <ProjectInto project={project}/>
+                          <ProjectInfo project={project}/>
                         </div>
                       );
                     }).reverse()
