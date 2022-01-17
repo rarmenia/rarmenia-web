@@ -6,6 +6,7 @@ export interface Job {
   division: string;
   team: string;
   title: string;
+  blurb: string;
   employment: Timeframe;
   projects: Project[];
 }

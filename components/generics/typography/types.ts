@@ -3,6 +3,7 @@ export type TypographyTypes =
   | 'subtitle'
   | 'heading'
   | 'subheading'
+  | 'subheading-2'
   | 'paragraph'
   | 'text'
   | 'code';

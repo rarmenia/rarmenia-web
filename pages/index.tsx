@@ -17,24 +17,22 @@ export default function Home(): JSX.Element {
     <Head>
       <title>Rei Armenia ⎔ Front-End Developer</title>
     </Head>
-    <Image
-      src="/img/winooski.jpg"
-      alt={'Image of Winooski River'}
-      layout={'fill'}
-      objectFit={'cover'}
-      objectPosition={'center'}
-      className={'blur-sm background-landing'}
-    />
     <main
       className={'w-screen h-screen flex items-center justify-center bg-stone-800 overflow-hidden'}
     >
-      return (
-      <div className={'w-full h-auto md:w-auto'}>
+      <Image
+        src="/img/winooski.jpg"
+        alt={'Image of Winooski River'}
+        layout={'fill'}
+        objectFit={'cover'}
+        objectPosition={'center'}
+        className={'blur-sm background-landing'}
+      />
+      <div className={'w-full h-auto md:w-auto text-center'}>
         <BusinessCard
-          // buttonRoute={'/about'}
+          buttonRoute={'/about'}
         />
       </div>
-      );
     </main>
   </>);
 }

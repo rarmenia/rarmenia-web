@@ -1,7 +1,7 @@
 import {GeneralInfo} from '../../../interfaces/general-info';
-import DocumentResolver from '../../generics/document-resolver';
 import Typography from '../../generics/typography';
 import {CakeIcon} from '@heroicons/react/solid';
+import {DocumentResolver} from '../../generics/firebase-resolvers';
 
 
 export default function BusinessCardName(): JSX.Element {
@@ -17,7 +17,7 @@ export default function BusinessCardName(): JSX.Element {
         {(data && !error) ? (
           <div className={'flex flex-col items-center justify-center'}>
             <Typography type="title" style={{weight: 'light', className: 'text-stone-800'}}>
-              <span className="text-amber-600">{data.name.first ?? ''}</span>
+              <span className="text-amber-700">{data.name.first ?? ''}</span>
               <span>&nbsp;{data.name.last ?? ''}
                 {isBirthday(data.birthdate.toDate()) &&
                     <span>&nbsp;<CakeIcon className={'h-5 mb-1 inline text-stone-600'}/></span>}

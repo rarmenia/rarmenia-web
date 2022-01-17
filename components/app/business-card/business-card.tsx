@@ -12,8 +12,8 @@ export default function BusinessCard(props: Props): JSX.Element {
   const router = useRouter();
 
   return (
-    <Card className={'md:rounded-[.5rem]'}>
-      <div className={'flex flex-col items-center justify-center md:px-20'}>
+    <Card className={'md:rounded-[.5rem] w-full md:w-auto'}>
+      <div className={'flex flex-col items-center justify-center md:px-20 px-4'}>
         <div className={'flex flex-row items-center justify-center gap-16'}>
           <div className={'flex flex-col items-center justify-center my-8'}>
             <Image
