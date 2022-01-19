@@ -4,9 +4,9 @@ export interface Project {
 
   name: string;
   description: string;
-  role: string;
-  duties: string[];
-  technologies: string[];
-  timeframe: Timeframe;
+  role?: string;
+  duties?: string[];
+  technologies?: string[];
+  timeframe?: Timeframe;
 
 }

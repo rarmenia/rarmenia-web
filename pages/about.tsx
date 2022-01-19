@@ -4,9 +4,11 @@ import {useDispatch} from 'react-redux';
 import {setLayout} from '../redux/layout/actions';
 import Typography from '../components/generics/typography';
 import AboutMeCard from '../components/app/about-card/about-card';
-import {CollectionResolver} from '../components/generics/firebase-resolvers';
+import {CollectionResolver, DocumentResolver} from '../components/generics/firebase-resolvers';
 import {Job} from '../interfaces/job';
 import JobCard from '../components/app/job-card/job-card';
+import {PersonalProjects} from '../interfaces/personal-projects';
+import ProjectCard from '../components/app/project-card';
 
 export default function About(): JSX.Element {
 
@@ -15,6 +17,7 @@ export default function About(): JSX.Element {
     dispatch(setLayout({showHeader: true}));
   }, [dispatch]);
 
+  // @ts-ignore
   return (
     <>
       <style jsx global>{`
@@ -26,12 +29,12 @@ export default function About(): JSX.Element {
         <title>Rei Armenia ⎔ About</title>
       </Head>
       <main className={'h-full w-full'}>
-        <div className={'my-4 md:mx-4 flex flex-col items-center justify-center gap-6'}>
+        <div className={'mt-4 mb-6 md:mx-4 flex flex-col items-center justify-center gap-6'}>
           <div className={'mt-2'}>
             <Typography type={'heading'} style={{className: 'text-3xl'}}>
               <span>
                 <span>&nbsp;-&nbsp;About&nbsp;</span>
-                <span className={'text-amber-700'}>&nbsp;ME&nbsp;</span>
+                <span className={'text-amber-700'}>ME&nbsp;</span>
                 <span>-</span>
               </span>
             </Typography>
@@ -43,7 +46,7 @@ export default function About(): JSX.Element {
             <Typography type={'heading'} style={{className: 'text-3xl'}}>
               <span>
                 <span>&nbsp;-&nbsp;Work&nbsp;</span>
-                <span className={'text-amber-700'}>&nbsp;Experience&nbsp;</span>
+                <span className={'text-amber-700'}>Experience&nbsp;</span>
                 <span>-</span>
               </span>
             </Typography>
@@ -64,6 +67,32 @@ export default function About(): JSX.Element {
                 </div>)
               }
             </CollectionResolver>
+          </div>
+          <div className={'mt-2'}>
+            <Typography type={'heading'} style={{className: 'text-3xl'}}>
+              <span>
+                <span>&nbsp;-&nbsp;Personal&nbsp;</span>
+                <span className={'text-amber-700'}>Projects&nbsp;</span>
+                <span>-</span>
+              </span>
+            </Typography>
+          </div>
+          <div className={'w-full mt-2'}>
+            <DocumentResolver<PersonalProjects> path={'about/personal-projects'}>
+              {
+                ({data}) => (<div className={'w-full flex flex-col gap-8 items-center justify-center'}>
+                  {
+                    (data?.projects ?? []).sort((a, b) => (a.timeframe?.start?.toMillis() ?? 0) - (b.timeframe?.start?.toMillis() ?? 0)).map((project, index) => {
+                      return (
+                        <div key={index} className={'w-full md:w-auto md:min-w-[80%] md:max-w-[80%]'}>
+                          <ProjectCard project={project} />
+                        </div>
+                      );
+                    })
+                  }
+                </div>)
+              }
+            </DocumentResolver>
           </div>
         </div>
       </main>

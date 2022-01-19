@@ -14,7 +14,7 @@ interface Props {
 export default function JobCard(props: Props): JSX.Element {
 
 
-  return <Card className={'md:rounded-[.45rem] p-4 text-center transition-all ease-in'}>
+  return <Card className={'md:rounded-[.45rem] p-4 text-center'}>
     <div className={'flex flex-col items-center justify-center'}>
       <div className={'flex flex-col items-center justify-center'}>
         <Typography type={'heading'}>
