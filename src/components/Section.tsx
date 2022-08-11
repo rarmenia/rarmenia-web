@@ -16,7 +16,7 @@ const Section = (props: Props) => {
 
   return (
     <div id={props.id} className={`${props.bg} min-h-screen flex flex-col`}>
-      <TagWrapper tag={props.tag} className="p-2">
+      <TagWrapper tag={props.tag} className='p-2'>
         {props.children}
       </TagWrapper>
     </div>

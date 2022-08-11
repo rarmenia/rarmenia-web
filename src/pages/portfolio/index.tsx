@@ -6,9 +6,7 @@ import {
   UserIcon,
 } from '@heroicons/react/outline';
 import { NextPage } from 'next';
-import Link from 'next/link';
 import { useState } from 'react';
-import Navigator from './components/Navigator';
 import About from './sections/About';
 import Hero from './sections/Hero';
 import Projects from './sections/Projects';
@@ -25,35 +23,35 @@ const Portfolio: NextPage = () => {
   const steps = [
     {
       id: 'hero',
-      icon: <HomeIcon className="h-6" />,
+      icon: <HomeIcon className='h-6' />,
       isVisible: heroVisible,
       setIsVisible: setHeroVisible,
       content: <Hero />,
     },
     {
       id: 'about',
-      icon: <UserIcon className="h-6" />,
+      icon: <UserIcon className='h-6' />,
       isVisible: aboutVisible,
       setIsVisible: setAboutVisible,
       content: <About />,
     },
     {
       id: 'technologies',
-      icon: <ServerIcon className="h-6" />,
+      icon: <ServerIcon className='h-6' />,
       isVisible: technologiesVisible,
       setIsVisible: setTechnologiesVisible,
       content: <Technologies />,
     },
     {
       id: 'work-experience',
-      icon: <OfficeBuildingIcon className="h-6" />,
+      icon: <OfficeBuildingIcon className='h-6' />,
       isVisible: workExperienceVisible,
       setIsVisible: setWorkExperienceVisible,
       content: <WorkExperience />,
     },
     {
       id: 'projects',
-      icon: <LightningBoltIcon className="h-6" />,
+      icon: <LightningBoltIcon className='h-6' />,
       isVisible: projectsVisible,
       setIsVisible: setProjectsVisible,
       content: <Projects />,
@@ -62,10 +60,9 @@ const Portfolio: NextPage = () => {
 
   return (
     <>
-      <div className="w-full h-full overflow-x-hidden">
-        <main className="w-full">{steps.map((step) => step.content)}</main>
+      <div className='w-full h-full overflow-x-hidden bg-stone-800'>
+        <main className='w-full'>{steps.map((step) => (<div key={step.id}>{step.content}</div>))}</main>
       </div>
-      <Navigator steps={steps} />
     </>
   );
 };
