@@ -23,7 +23,7 @@ const Headline = (props: Props) => {
           <p className='text-center text-xs text-stone-800'>
             <ZipperText center={true} words={[
               ...Me.info.location.region.split(' '),
-              Me.info.location.state,
+              ...Me.info.location.state.split(' '),
             ]} />
           </p>
         </div>
