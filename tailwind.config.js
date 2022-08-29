@@ -22,6 +22,22 @@ module.exports = {
                 opacity: '0',
             }
         },
+        'fade-in-30': {
+            '0%': {
+                opacity: '0',
+            },
+            '100%': {
+                opacity: '.3',
+            }
+        },
+        'fade-out-30': {
+            '0%': {
+                opacity: '.3',
+            },
+            '100%': {
+                opacity: '0',
+            }
+        },
         'fade-in-down': {
             '0%': {
                 opacity: '0',
@@ -64,6 +80,8 @@ module.exports = {
         }
     },
     animation: {
+        'fade-in-30': 'fade-in-30 1.5s ease-out',
+        'fade-out-30': 'fade-out-30 1.5s ease-out',
         'fade-in': 'fade-in 1.5s ease-out',
         'fade-out': 'fade-out 1.5s ease-out',
         'fade-in-down': 'fade-in-down 1.5s ease-out',

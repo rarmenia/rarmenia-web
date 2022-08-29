@@ -30,7 +30,7 @@ const Tag = (props: TagProps) => {
     : undefined;
 
   const finalClasses = [
-    (props.noAnimation ? '' : 'animate-fade-in'),
+    (props.noAnimation ? '' : 'animate-fade-in-30'),
     propClasses,
     ...(props.removeDefault
       ? []
