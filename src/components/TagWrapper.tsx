@@ -25,48 +25,52 @@ const Tag = (props: TagProps) => {
     ? typeof props.className === 'string'
       ? props.className
       : props.type === 'open'
-        ? props.className.open
-        : props.className.close
+      ? props.className.open
+      : props.className.close
     : undefined;
 
   const finalClasses = [
-    (props.noAnimation ? '' : 'animate-fade-in-30'),
+    props.noAnimation ? '' : 'animate-fade-in-30',
     propClasses,
     ...(props.removeDefault
       ? []
       : [
-        defaultClasses,
-        props.type === 'open' ? openingDefault : closingDefault,
-      ]),
+          defaultClasses,
+          props.type === 'open' ? openingDefault : closingDefault,
+        ]),
   ]
     .filter((_) => _?.length ?? 0 > 0)
     .join(' ');
 
-  return (
+  const render = () => (
     <div className={finalClasses}>
       <code>{`<${props.type === 'close' ? '/' : ''}${props.tag}>`}</code>
     </div>
   );
+
+  return render();
 };
 
 const TagWrapper = (props: Props) => {
-  return (
+  const render = () => (
     <>
       <Tag
-        type='open'
+        type="open"
         tag={props.tag}
         className={props.className}
         removeDefault={props.removeDefault}
       />
       {props.children}
       <Tag
-        type='close'
+        type="close"
         tag={props.tag}
         className={props.className}
         removeDefault={props.removeDefault}
       />
     </>
   );
+
+  return render();
 };
 
 export default TagWrapper;

@@ -78,6 +78,7 @@ module.exports = {
                 transform: 'translateY(10px)'
             },
         }
+    
     },
     animation: {
         'fade-in-30': 'fade-in-30 1.5s ease-out',
@@ -88,6 +89,13 @@ module.exports = {
         'fade-out-down': 'fade-out-down 1.5s ease-out',
         'fade-in-up': 'fade-in-up 1.5s ease-out',
         'fade-out-up': 'fade-out-up 1.5s ease-out'
+    },
+    colors: {
+        'tfe': {
+            'light': '#bcb0a2 ',
+            DEFAULT: '#a19383',
+            'dark': '#6e6153',
+        }
     }
     },
   },
