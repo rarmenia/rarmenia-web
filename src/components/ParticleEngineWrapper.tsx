@@ -1,5 +1,5 @@
 import React from 'react';
-import Particles from 'react-tsparticles';
+import Particles from 'react-particles';
 import { IOptions, RecursivePartial } from 'tsparticles-engine';
 
 type Props = {

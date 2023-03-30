@@ -1,10 +1,10 @@
 import {
   HomeIcon,
-  LightningBoltIcon,
-  OfficeBuildingIcon,
+  BoltIcon,
+  BuildingOfficeIcon,
   ServerIcon,
   UserIcon,
-} from '@heroicons/react/outline';
+} from '@heroicons/react/24/outline';
 import { NextPage } from 'next';
 import React from 'react';
 import { ReactElement, useState } from 'react';
@@ -35,12 +35,12 @@ const Portfolio: NextPageWithLayout = () => {
     },
     {
       id: 'work-experience',
-      icon: <OfficeBuildingIcon className="h-6" />,
+      icon: <BuildingOfficeIcon className="h-6" />,
       content: <WorkExperience />,
     },
     {
       id: 'projects',
-      icon: <LightningBoltIcon className="h-6" />,
+      icon: <BoltIcon className="h-6" />,
       content: <Projects />,
     },
   ];
@@ -61,7 +61,7 @@ const Portfolio: NextPageWithLayout = () => {
 Portfolio.getLayout = function getLayout(page: ReactElement) {
   return (
     <>
-      <PortfolioTopBar />
+      {/* <PortfolioTopBar /> */}
       {page}
     </>
   );

@@ -1,10 +1,10 @@
 import {
   BookOpenIcon,
-  LightningBoltIcon,
-  OfficeBuildingIcon,
+  BoltIcon,
+  BuildingOfficeIcon,
   ServerIcon,
   UserIcon,
-} from '@heroicons/react/outline';
+} from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
@@ -21,7 +21,7 @@ const MenuOptions = [
   </Link>,
   <Link key="menu-work" href="#work-experience" className="cursor-pointer">
     <span className="flex flex-row items-center gap-2 cursor-pointer">
-      <OfficeBuildingIcon className="h-4 mb-1" /> Work
+      <BuildingOfficeIcon className="h-4 mb-1" /> Work
     </span>
   </Link>,
   <Link key="menu-projects" href="#projects" className="cursor-pointer">
@@ -31,7 +31,7 @@ const MenuOptions = [
   </Link>,
   <Link key="menu-interactive" href="/interactive" className="cursor-pointer">
     <span className="flex flex-row items-center gap-2 cursor-pointer">
-      <LightningBoltIcon className="h-4 mb-1" /> Interactive
+      <BoltIcon className="h-4 mb-1" /> Interactive
     </span>
   </Link>,
 ];
