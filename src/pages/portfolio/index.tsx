@@ -61,7 +61,7 @@ const Portfolio: NextPageWithLayout = () => {
 Portfolio.getLayout = function getLayout(page: ReactElement) {
   return (
     <>
-      {/* <PortfolioTopBar /> */}
+      <PortfolioTopBar />
       {page}
     </>
   );
