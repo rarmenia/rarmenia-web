@@ -22,7 +22,7 @@ export interface VimeoParams {
 
 export function vimeo_link(video_id: string, params?: Partial<VimeoParams>): string {
   const query: string | undefined = params ? '?' + Object.entries(params).reduce((prev: string, [key, value]) => {
-    const param = `${key}=${JSON.stringify(value)}`;
+    const param = `${key}=${typeof value === 'string' ? value : JSON.stringify(value)}`;
     return prev + (prev ? '&' : '') + param;
   }, '') : undefined;
 

@@ -25,8 +25,8 @@ const Tag = (props: TagProps) => {
     ? typeof props.className === 'string'
       ? props.className
       : props.type === 'open'
-      ? props.className.open
-      : props.className.close
+        ? props.className.open
+        : props.className.close
     : undefined;
 
   const finalClasses = [
@@ -35,9 +35,9 @@ const Tag = (props: TagProps) => {
     ...(props.removeDefault
       ? []
       : [
-          defaultClasses,
-          props.type === 'open' ? openingDefault : closingDefault,
-        ]),
+        defaultClasses,
+        props.type === 'open' ? openingDefault : closingDefault,
+      ]),
   ]
     .filter((_) => _?.length ?? 0 > 0)
     .join(' ');
