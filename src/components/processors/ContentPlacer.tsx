@@ -15,11 +15,14 @@ interface Props {
   space: Dimensions;
   aspect: number;
 
+  scaleToFill?: boolean;
+  centerContent?: boolean;
+
   children: (dimOff: DimOffset) => JSX.Element;
 
 }
 
-const ContentFiller = (props: Props) => {
+const ContentPlacer = (props: Props) => {
 
   const calcContentDimensionsFit = (available: Dimensions, contentAspect: number): Dimensions => {
     const byWidth = (available.width / available.height) > contentAspect;
@@ -47,12 +50,12 @@ const ContentFiller = (props: Props) => {
   const calcDimensionsAndOffset = (available: Dimensions, contentAspect: number = 16 / 9): DimOffset => {
     const fit = calcContentDimensionsFit(available, contentAspect);
     const scaled = calcContentDimensionsCover(available, fit);
-    const offset = calcContentOffset(available, scaled);
-    return { ...scaled, ...offset };
+    const centerOffset = calcContentOffset(available, props.scaleToFill ? scaled : fit);
+    return { ...(props.scaleToFill ? scaled : fit), ...(props.centerContent ? centerOffset : { top: 0, left: 0 }) };
   }
 
   return (<>{props.children(calcDimensionsAndOffset(props.space, props.aspect))}</>)
 }
 
 
-export default ContentFiller;
+export default ContentPlacer;

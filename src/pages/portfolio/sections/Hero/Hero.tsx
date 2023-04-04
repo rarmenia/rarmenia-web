@@ -1,6 +1,6 @@
 import VideoKnockoutScreen from 'components/visuals/VideoKnockoutScreen';
-import ZipperText from '../../../../components/ZipperText';
 import { vimeo_link } from '../../../../utils';
+import ZipperText from 'components/visuals/ZipperText';
 const Hero = () => {
   return (
     <>

@@ -5,16 +5,15 @@ import {
   ServerIcon,
   UserIcon,
 } from '@heroicons/react/24/outline';
-import { NextPage } from 'next';
 import React from 'react';
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 import { NextPageWithLayout } from '../_app';
 import PortfolioTopBar from './PortfolioTopBar';
-import About from './sections/About';
-import Hero from './sections/Hero';
-import Projects from './sections/Projects';
-import Technologies from './sections/Technologies';
-import WorkExperience from './sections/WorkExperience';
+import About from './sections/About/About';
+import Hero from './sections/Hero/Hero';
+import Projects from './sections/Projects/Projects';
+import Technologies from './sections/Technologies/Technologies';
+import WorkExperience from './sections/WorkExperience/WorkExperience';
 
 const Portfolio: NextPageWithLayout = () => {
   const steps = [

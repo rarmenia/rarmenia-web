@@ -1,10 +1,9 @@
-import { CakeIcon } from '@heroicons/react/outline';
+import { CakeIcon } from '@heroicons/react/24/outline';
 import React from 'react'
 import Me from '../../../../data/Me';
 
-type Props = {}
 
-const PersonalContent = (props: Props) => {
+const PersonalContent = () => {
 
   const birthdate = new Date(Me.info.birthdate);
   const today = new Date();

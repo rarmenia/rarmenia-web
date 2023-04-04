@@ -1,6 +1,5 @@
-import ContentFiller from "components/processors/ContentFiller";
+import ContentPlacer from "components/processors/ContentPlacer";
 import ScreenSize from "components/providers/ScreenSize";
-import { useEffect, useState } from "react";
 
 interface Props {
   src: string;
@@ -18,13 +17,13 @@ const VideoKnockoutScreen = (props: Props) => {
       <div className="h-full w-full overflow-hidden absolute top-0 left-0">
         <ScreenSize>
           {(dim) => (
-            <ContentFiller space={dim} aspect={props.aspectRatio ?? 16 / 9}>
+            <ContentPlacer space={dim} aspect={props.aspectRatio ?? (16 / 9)} scaleToFill={true} centerContent={true}>
               {(dimOff) => (
                 <>
                   <object data={props.src} className="absolute" style={dimOff} />
                 </>
               )}
-            </ContentFiller>
+            </ContentPlacer>
           )}
         </ScreenSize>
       </div>
