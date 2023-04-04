@@ -15,9 +15,6 @@ interface Props {
   space: Dimensions;
   aspect: number;
 
-  scaleToFill?: boolean;
-  centerContent?: boolean;
-
   children: (dimOff: DimOffset) => JSX.Element;
 
 }
@@ -33,7 +30,9 @@ const ContentPlacer = (props: Props) => {
   }
 
   const calcContentDimensionsCover = (available: Dimensions, content: Dimensions): Dimensions => {
-    const scale = Math.max(available.width / content.width, available.height / content.height);
+    const scaleX = available.width / content.width;
+    const scaleY = available.height / content.height;
+    const scale = Math.max(scaleX, scaleY);
     return {
       width: content.width * scale,
       height: content.height * scale,
@@ -47,14 +46,47 @@ const ContentPlacer = (props: Props) => {
     }
   }
 
-  const calcDimensionsAndOffset = (available: Dimensions, contentAspect: number = 16 / 9): DimOffset => {
-    const fit = calcContentDimensionsFit(available, contentAspect);
-    const scaled = calcContentDimensionsCover(available, fit);
-    const centerOffset = calcContentOffset(available, props.scaleToFill ? scaled : fit);
-    return { ...(props.scaleToFill ? scaled : fit), ...(props.centerContent ? centerOffset : { top: 0, left: 0 }) };
-  }
+  const calcDimensionsAndOffset = (
+    availableWidth: number,
+    availableHeight: number,
+    contentAspectRatio: number = 16 / 9
+  ): DimOffset => {
+    // Step 1: Calculate width and height respecting aspect ratio
+    let width: number;
+    let height: number;
 
-  return (<>{props.children(calcDimensionsAndOffset(props.space, props.aspect))}</>)
+    if (availableWidth / availableHeight > contentAspectRatio) {
+      width = availableHeight * contentAspectRatio;
+      height = availableHeight;
+    } else {
+      width = availableWidth;
+      height = availableWidth / contentAspectRatio;
+    }
+
+    const smallestPossibleWidth = Math.ceil(contentAspectRatio);
+    const smallestPossibleHeight = Math.ceil(1 / contentAspectRatio);
+
+    if (width < smallestPossibleWidth || height < smallestPossibleHeight) {
+      width = smallestPossibleWidth;
+      height = smallestPossibleHeight;
+    }
+
+    // Step 2: Scale dimensions to fully cover available space
+    const scaleX = availableWidth / width;
+    const scaleY = availableHeight / height;
+    const scale = Math.max(scaleX, scaleY);
+    width *= scale;
+    height *= scale;
+
+    // Step 3: Calculate top and left to center content within available space
+    const top = (availableHeight - height) / 2;
+    const left = (availableWidth - width) / 2;
+
+    return { width, height, top, left };
+  };
+
+
+  return (<>{props.children(calcDimensionsAndOffset(props.space.width, props.space.height, props.aspect))}</>)
 }
 
 

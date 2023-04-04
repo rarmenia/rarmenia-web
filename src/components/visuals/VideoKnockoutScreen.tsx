@@ -17,10 +17,16 @@ const VideoKnockoutScreen = (props: Props) => {
       <div className="h-full w-full overflow-hidden absolute top-0 left-0">
         <ScreenSize>
           {(dim) => (
-            <ContentPlacer space={dim} aspect={props.aspectRatio ?? (16 / 9)} scaleToFill={true} centerContent={true}>
+            <ContentPlacer space={dim} aspect={props.aspectRatio ?? (16 / 9)}>
               {(dimOff) => (
                 <>
-                  <object data={props.src} className="absolute" style={dimOff} />
+                  <object data={props.src} className="absolute" style={
+                    {
+                      ...dimOff,
+                      minHeight: dimOff.height,
+                      minWidth: dimOff.width
+                    }
+                  } />
                 </>
               )}
             </ContentPlacer>
