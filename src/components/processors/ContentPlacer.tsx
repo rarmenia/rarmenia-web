@@ -21,31 +21,6 @@ interface Props {
 
 const ContentPlacer = (props: Props) => {
 
-  const calcContentDimensionsFit = (available: Dimensions, contentAspect: number): Dimensions => {
-    const byWidth = (available.width / available.height) > contentAspect;
-    return {
-      width: Math.max(Math.ceil(contentAspect), available.width * (byWidth ? contentAspect : 1)),
-      height: Math.max(Math.ceil(contentAspect), available.height / (byWidth ? 1 : contentAspect))
-    }
-  }
-
-  const calcContentDimensionsCover = (available: Dimensions, content: Dimensions): Dimensions => {
-    const scaleX = available.width / content.width;
-    const scaleY = available.height / content.height;
-    const scale = Math.max(scaleX, scaleY);
-    return {
-      width: content.width * scale,
-      height: content.height * scale,
-    }
-  }
-
-  const calcContentOffset = (available: Dimensions, content: Dimensions): Offset => {
-    return {
-      top: (available.height - content.height) / 2,
-      left: (available.width - content.width) / 2
-    }
-  }
-
   const calcDimensionsAndOffset = (
     availableWidth: number,
     availableHeight: number,
