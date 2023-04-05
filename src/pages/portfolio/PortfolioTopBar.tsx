@@ -5,8 +5,11 @@ import {
   ServerIcon,
   UserIcon,
 } from '@heroicons/react/24/outline';
+import MappedProperty from 'components/processors/MappedProperty';
+import ScreenSize from 'components/providers/ScreenSize';
+import ScrollPosition from 'components/providers/ScrollPosition';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { } from 'react';
 
 const MenuOptions = [
   <Link key="menu-about" href="#about" className="cursor-pointer">
@@ -37,59 +40,17 @@ const MenuOptions = [
 ];
 
 const PortfolioTopBar = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [windowHeight, setWindowHeight] = useState(0);
-
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY);
-  };
-
-  const handleResize = () => {
-    setWindowHeight(window.innerHeight);
-  };
-
-  const calculateBackgroundOpacity = (
-    scrollPosition: number,
-    pageHeight: number,
-    offset: number = 0.4
-  ) => {
-    return Math.min(1, scrollPosition / (pageHeight * offset));
-  };
-
-  useEffect(() => {
-    setScrollPosition(window.scrollY);
-    setWindowHeight(window.innerHeight);
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const render = () => (
-    <div
-      className="z-[3000] fixed h-14 text-white w-full flex flex-row items-center px-4 rounded-b-xl justify-around"
-      style={{
-        backgroundColor: `rgba(180, 83, 9, ${calculateBackgroundOpacity(
-          scrollPosition,
-          windowHeight
-        )})`,
-      }}
-    >
-      <div>
-        <Link href={'#hero'}># Rei Armenia</Link>
-      </div>
-      <div className="flex-grow"></div>
-      <div className="hidden md:flex flex-row mr-4 gap-8">
-        {MenuOptions.map((option) => option)}
-      </div>
-    </div>
-  );
-
-  return render();
-};
+  return <ScrollPosition children={(position) =>
+    <ScreenSize children={(size) => (
+      <MappedProperty active={[0 + (size.height / 4), size.height - (size.height / 2)]} target={[0, 100]} current={position} children={(opacity) => (
+        <div
+          style={{ opacity: `${opacity}%` }}
+          className="z-[3000] fixed bg-black/10 backdrop-blur-md w-screen flex flex-col px-8 py-6 text-white">
+          <div className="font-mono"> Rei Armenia </div>
+        </div>
+      )} />
+    )} />
+  } />
+}
 
 export default PortfolioTopBar;

@@ -1,22 +1,13 @@
 import React from 'react';
-import PersonalContent from './PersonalContent';
-import ProfessionalContent from './ProfessionalContent';
+import InfoItems from './InfoItems';
 
 
-type Props = {};
 
-const About = (props: Props) => {
+const About = () => {
   return (
-    <div id='about' className='bg-black/[85%] flex flex-col backdrop-blur-md'>
-      <div className='px-4 py-8 w-full h-full flex flex-col items-center justify-center gap-8'>
-        <div className='h-full bg-stone-100 w-10/12 py-8 px-4 rounded-xl shadow-sm animate-fade-in'>
-          <PersonalContent />
-        </div>
-        <div className='h-full bg-stone-100 w-10/12 py-8 px-4 rounded-xl shadow-sm animate-fade-in'>
-          <ProfessionalContent />
-        </div>
-      </div>
-      <div className='flex-grow'></div>
+    <div id='about' className='bg-black/[85%] flex flex-col backdrop-blur-md py-[10vh] flex flex-col gap-8 items-center justify-center'>
+      <div className="rounded-full bg-amber-600 aspect-square w-8/12 max-w-[12rem] md:max-w-[12rem]" />
+      <InfoItems />
     </div>
   );
 };
