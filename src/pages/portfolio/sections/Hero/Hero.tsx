@@ -9,24 +9,30 @@ const Hero = () => {
       <div className="w-screen h-screen relative">
         <div className="absolute inset-0 w-screen h-screen z-10 backdrop-blur-md" />
 
-        <ScrollPosition children={(scroll) => (
-          <ScreenSize children={(size) => (
-            <>
-              <MappedProperty
-                active={[0 + (size.height / 8), size.height - (size.height / 2)]}
-                target={[100, 10]}
-                current={scroll}
-                children={(opacity) => <HeroContent opacity={opacity} />}
-              />
-              <MappedProperty
-                active={[0 + (size.height / 8), size.height - (size.height / 6)]}
-                target={[90, 5]}
-                current={scroll}
-                children={(opacity) => <HeroScroll opacity={opacity} />}
-              />
-            </>
-          )} />
-        )} />
+        <ScrollPosition>
+          {(scroll) => (
+            <ScreenSize>
+              {(size) => (
+                <>
+                  <MappedProperty
+                    active={[0 + (size.height / 8), size.height - (size.height / 2)]}
+                    target={[100, 10]}
+                    current={scroll}
+                  >
+                    {(opacity) => <HeroContent opacity={opacity} />}
+                  </MappedProperty>
+                  <MappedProperty
+                    active={[0 + (size.height / 8), size.height - (size.height / 6)]}
+                    target={[90, 5]}
+                    current={scroll}
+                  >
+                    {(opacity) => <HeroScroll opacity={opacity} />}
+                  </MappedProperty>
+                </>
+              )}
+            </ScreenSize>
+          )}
+        </ScrollPosition>
       </div>
     </>
   );
