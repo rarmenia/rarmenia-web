@@ -6,34 +6,30 @@ import HeroScroll from './HeroScroll';
 const Hero = () => {
   return (
     <>
-      <div className="w-screen h-screen relative">
-        <div className="absolute inset-0 w-screen h-screen z-10 backdrop-blur-md" />
-
-        <ScrollPosition>
-          {(scroll) => (
-            <ScreenSize>
-              {(size) => (
-                <>
-                  <MappedProperty
-                    active={[0 + (size.height / 8), size.height - (size.height / 2)]}
-                    target={[100, 10]}
-                    current={scroll}
-                  >
-                    {(opacity) => <HeroContent opacity={opacity} />}
-                  </MappedProperty>
-                  <MappedProperty
-                    active={[0 + (size.height / 8), size.height - (size.height / 6)]}
-                    target={[90, 5]}
-                    current={scroll}
-                  >
-                    {(opacity) => <HeroScroll opacity={opacity} />}
-                  </MappedProperty>
-                </>
-              )}
-            </ScreenSize>
-          )}
-        </ScrollPosition>
-      </div>
+      <ScrollPosition>
+        {(scroll) => (
+          <ScreenSize>
+            {(size) => (
+              <div aria-hidden="true">
+                <MappedProperty
+                  active={[0 + (size.height / 8), size.height - (size.height / 2)]}
+                  target={[100, 0]}
+                  current={scroll}
+                >
+                  {(track) => <HeroContent opacity={track} translateY={track === 0 ? -800 : ((100 - track) * 1.8) * -1} />}
+                </MappedProperty>
+                <MappedProperty
+                  active={[0 + (size.height / 8), size.height - (size.height / 1.5)]}
+                  target={[100, 0]}
+                  current={scroll}
+                >
+                  {(opacity) => <HeroScroll opacity={opacity} />}
+                </MappedProperty>
+              </div>
+            )}
+          </ScreenSize>
+        )}
+      </ScrollPosition>
     </>
   );
 };

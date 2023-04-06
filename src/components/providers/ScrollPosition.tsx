@@ -12,6 +12,8 @@ const ScrollPosition = (props: Props) => {
   };
 
   useEffect(() => {
+
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {

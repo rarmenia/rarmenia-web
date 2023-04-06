@@ -2,12 +2,13 @@ import ZipperText from "components/visuals/ZipperText"
 
 interface Props {
   opacity: number;
+  translateY: number
 }
 
 const HeroContent = (props: Props) => {
-  return <div className="absolute inset-0 w-screen h-screen bg-black/[84%] z-20 mix-blend-multiply grid place-items-center text-white font-mono">
+  return <div className="absolute inset-0 grid place-items-center text-white font-mono">
     <div
-      style={{ opacity: `${props.opacity}%` }}
+      style={{ opacity: `${props.opacity}%`, transform: `translateY(${props.translateY}%)`, perspective: '20rem', }}
       className="animate-fade-in flex flex-col items-center justify-center gap-4 md:gap-0.5  border-[2px] border-blue-300 border-opacity-20 rounded-md select-none p-8">
 
       <div className="flex flex-col md:flex-row items-center md:gap-4 font-black">
