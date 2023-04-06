@@ -3,7 +3,8 @@ import ScreenSize from "components/providers/ScreenSize"
 
 interface Props {
   aspectRatio: number;
-  src: string;
+  video: string;
+  img?: string;
 }
 
 const ScreenBackground = (props: Props) => {
@@ -13,7 +14,7 @@ const ScreenBackground = (props: Props) => {
         <ContentPlacer space={dim} aspect={props.aspectRatio ?? (16 / 9)}>
           {(dimOff) => (
             <>
-              <object data={props.src} className="fixed z-[-999]" style={
+              <object data={props.video} className="absolute" style={
                 {
                   ...dimOff,
                   minHeight: dimOff.height,
