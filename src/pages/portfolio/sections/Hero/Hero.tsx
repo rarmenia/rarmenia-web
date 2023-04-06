@@ -12,7 +12,7 @@ const Hero = () => {
             {(size) => (
               <div aria-hidden="true">
                 <MappedProperty
-                  active={[0 + (size.height / 8), size.height - (size.height / 2)]}
+                  active={[0 + (size.height / 3), size.height - (size.height / 8)]}
                   target={[100, 0]}
                   current={scroll}
                 >
