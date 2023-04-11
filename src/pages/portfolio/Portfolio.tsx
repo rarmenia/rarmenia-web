@@ -1,14 +1,11 @@
 import React from 'react';
-import { ReactElement } from 'react';
-import { NextPageWithLayout } from '../_app';
-import PortfolioTopBar from './PortfolioTopBar';
 import Hero from './sections/Hero/Hero';
 import { vimeo_link } from 'utils/vimeo';
 import PortfolioBackground from './PortfolioBackground';
 import HeroContent from './sections/Hero/HeroContent';
 import Info from './sections/Info/Info';
 
-const Portfolio: NextPageWithLayout = () => {
+const Portfolio = () => {
 
   return (
     <div className="relative">
@@ -38,13 +35,5 @@ const Portfolio: NextPageWithLayout = () => {
   );
 };
 
-Portfolio.getLayout = function getLayout(page: ReactElement) {
-  return (
-    <>
-      <PortfolioTopBar />
-      {page}
-    </>
-  );
-};
 
 export default Portfolio;
