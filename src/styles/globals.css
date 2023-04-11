@@ -5,6 +5,7 @@
 
 html body {
   font-family: 'Atkinson Hyperlegible', sans-serif;
+  scroll-behavior: smooth;
 }
 
 canvas {
