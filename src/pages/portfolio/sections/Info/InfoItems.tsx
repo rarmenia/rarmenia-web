@@ -1,6 +1,6 @@
 import { AcademicCapIcon, BriefcaseIcon, CakeIcon, IdentificationIcon, MapPinIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 import InfoCard from "./InfoCard";
-import ComponentViewIntersection from "components/processors/ComponentViewIntersection";
+import ComponentViewIntersection from "components/providers/ComponentViewIntersection";
 
 const items: { icon: React.ReactNode, text: string, title: string }[] = [
   {
@@ -34,7 +34,7 @@ const InfoItems = () => {
   return (
     <div className="flex flex-col gap-4 w-11/12 md:w-6/12">
       {items.map((item, index) => (
-        <ComponentViewIntersection threshold={0.4} >
+        <ComponentViewIntersection threshold={0.4} key={index} >
           {
             (intersection) => (
               <>
