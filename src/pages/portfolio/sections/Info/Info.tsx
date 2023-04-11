@@ -10,7 +10,7 @@ const Info = () => {
       <div className="flex flex-col gap-8 items-center justify-center w-full">
         <ComponentViewIntersection threshold={0.8} >
           {(intersection) =>
-          (<div className={"rounded-full bg-amber-600 aspect-square w-48 grid place-items-center".concat(' ', intersection.isVisible ? 'animate-fade-in' : 'opacity-0')} >
+          (<div className={`rounded-full bg-amber-600 aspect-square w-48 grid place-items-center ${intersection.isVisible ? 'animate-fade-in' : 'opacity-0'}`} >
             image placeholder
           </div>)
           }
