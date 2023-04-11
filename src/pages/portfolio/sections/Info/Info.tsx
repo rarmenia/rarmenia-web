@@ -1,6 +1,6 @@
 import React from 'react';
 import InfoItems from './InfoItems';
-import ComponentViewIntersection from 'components/processors/ComponentViewIntersection';
+import ComponentViewIntersection from 'components/providers/ComponentViewIntersection';
 
 
 
