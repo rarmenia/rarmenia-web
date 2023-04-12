@@ -7,7 +7,7 @@ const Blurb = () => {
     <div className="w-screen h-screen grid place-items-center p-2">
 
       <div className="relative isolate text-white w-10/12 md:w-3/4 font-mono">
-        <div className="z-0 bg-stone-300/20 backdrop-blur-lg p-4 ml-4 w-auto rounded-lg flex-col flex gap-2">
+        <div className="z-0 bg-stone-300/20 backdrop-blur-lg p-4 ml-6 md:ml-0 w-auto rounded-lg flex-col flex gap-2">
           <p>
             Hey there! I&apos;m Rei, a software engineer based in the Capital Region of New York.
           </p>
@@ -36,8 +36,8 @@ const Blurb = () => {
             Plus, all of that trivia knowledge comes in handy on game nights!
           </p>
         </div>
-        <div className="absolute z-10 -left-8 -bottom-4 bg-stone-300/20 backdrop-blur-lg rounded-full p-2" aria-hidden="true">
-          <ChatBubbleOvalLeftEllipsisIcon className="h-6" />
+        <div className="absolute z-10 -left-8 md:-left-10 -bottom-4 bg-stone-300/20 backdrop-blur-lg rounded-full p-2" aria-hidden="true">
+          <ChatBubbleOvalLeftEllipsisIcon className="h-8" />
         </div>
       </div>
 
