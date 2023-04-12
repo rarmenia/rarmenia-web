@@ -22,7 +22,7 @@ const Portfolio = () => {
         <main className="w-full">
 
           {/* Ensure that HeroContent will appear in Screen Readers */}
-          <div className="sr-only"><HeroContent opacity={0} translateY={0} /> </div> ?
+          <div className="sr-only"><HeroContent opacity={0} translateY={0} /> </div>
 
           {/* Offset one Full Screen -> function as  HERO */}
           <div className="bg-transparent h-screen w-screen" />
