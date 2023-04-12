@@ -9,10 +9,10 @@ const Blurb = () => {
       <div className="relative isolate text-white w-10/12 md:w-3/4 font-mono">
         <div className="z-0 bg-stone-300/20 backdrop-blur-lg p-4 ml-4 w-auto rounded-lg flex-col flex gap-2">
           <p>
-            Hi! I'm Rei!
+            Hi! I&apos;m Rei!
           </p>
           <p>
-            I'm a software engineer from the Capitol Region of New York. I do full-stack work, but much of my experience and passion lies with front-end technologies.
+            I&apos;m a software engineer from the Capitol Region of New York. I do full-stack work, but much of my experience and passion lies with front-end technologies.
           </p>
           <p>
             I went to college in Burlington Vermont at Champlain College and obtained a B.S. in Computer Science in 2018.
