@@ -1,17 +1,26 @@
-import type { NextPage } from 'next';
-import Link from 'next/link';
+import { ReactElement } from 'react';
+import { NextPageWithLayout } from './_app';
+import Portfolio from './portfolio/Portfolio';
+import PortfolioTopBar from './portfolio/PortfolioTopBar';
+import Head from 'next/head';
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   return (
-    <main className='w-screen h-screen grid place-items-center'>
-      <div className='bg-red-100 text-red-800 font-semibold'>
-        <div>
-          You should not be seeing this page, click{' '}
-          <Link href='/portfolio'>THIS</Link> to redirect to the correct page.
-        </div>
-      </div>
-    </main>
+    <Portfolio />
   );
 };
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <>
+      <Head>
+        <title>Rei Armenia</title>
+      </Head>
+      <PortfolioTopBar />
+      {page}
+    </>
+  );
+};
+
 
 export default Home;

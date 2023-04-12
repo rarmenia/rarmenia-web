@@ -1,14 +1,12 @@
 import React from 'react';
-import { ReactElement } from 'react';
-import { NextPageWithLayout } from '../_app';
-import PortfolioTopBar from './PortfolioTopBar';
 import Hero from './sections/Hero/Hero';
 import { vimeo_link } from 'utils/vimeo';
 import PortfolioBackground from './PortfolioBackground';
 import HeroContent from './sections/Hero/HeroContent';
 import Info from './sections/Info/Info';
+import Blurb from './sections/Blurb';
 
-const Portfolio: NextPageWithLayout = () => {
+const Portfolio = () => {
 
   return (
     <div className="relative">
@@ -20,17 +18,18 @@ const Portfolio: NextPageWithLayout = () => {
         aspect={1.9 / 1}
         multiplyContent={<Hero />}
       />
-      <div className="bg-transparent w-screen z-10 isolate">
+      <div className="bg-transparent w-screen z-10 isolate py-2">
         <main className="w-full">
 
           {/* Ensure that HeroContent will appear in Screen Readers */}
-          <div className="sr-only"><HeroContent opacity={0} translateY={0} /> </div> ?
+          <div className="sr-only"><HeroContent opacity={0} translateY={0} /> </div>
 
           {/* Offset one Full Screen -> function as  HERO */}
           <div className="bg-transparent h-screen w-screen" />
 
           <Info />
 
+          <Blurb />
 
         </main>
       </div>
@@ -38,13 +37,5 @@ const Portfolio: NextPageWithLayout = () => {
   );
 };
 
-Portfolio.getLayout = function getLayout(page: ReactElement) {
-  return (
-    <>
-      <PortfolioTopBar />
-      {page}
-    </>
-  );
-};
 
 export default Portfolio;

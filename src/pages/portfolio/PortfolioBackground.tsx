@@ -21,7 +21,7 @@ const PortfolioBackground = (props: Props) => {
       </div>
 
       <div className="z-10 bg-stone-300/5 backdrop-blur-md absolute inset-0" />
-      <div className="z-20 bg-black/90 absolute mix-blend-multiply inset-0">
+      <div className="z-20 bg-black/80 absolute mix-blend-multiply inset-0">
         {props.multiplyContent ?? <></>}
       </div>
 
