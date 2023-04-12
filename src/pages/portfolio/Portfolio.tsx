@@ -4,6 +4,7 @@ import { vimeo_link } from 'utils/vimeo';
 import PortfolioBackground from './PortfolioBackground';
 import HeroContent from './sections/Hero/HeroContent';
 import Info from './sections/Info/Info';
+import Blurb from './sections/Blurb';
 
 const Portfolio = () => {
 
@@ -17,7 +18,7 @@ const Portfolio = () => {
         aspect={1.9 / 1}
         multiplyContent={<Hero />}
       />
-      <div className="bg-transparent w-screen z-10 isolate">
+      <div className="bg-transparent w-screen z-10 isolate py-2">
         <main className="w-full">
 
           {/* Ensure that HeroContent will appear in Screen Readers */}
@@ -28,6 +29,7 @@ const Portfolio = () => {
 
           <Info />
 
+          <Blurb />
 
         </main>
       </div>
