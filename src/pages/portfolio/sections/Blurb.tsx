@@ -25,12 +25,13 @@ const Blurb = () => {
             including a web app that streamlined the process of applying for rental assistance and New York&apos;s Vaccine Scheduling tool.
           </p>
           <p>
-            When I'm not coding, you can usually find me indulging in two of my favorite pastimes: video games and animals. I've spent countless hours analyzing video game soundtracks and exploring the creative ways in which music can enhance user experiences.
-            I'm also a big animal lover, and I often find myself watching videos of cute animals (who doesn't love that?).
+            When I&apos;m not coding, you can usually find me indulging in two of my favorite pastimes: video games and animals.
+            I&apos;ve spent countless hours analyzing video game soundtracks and exploring the creative ways in which music can enhance user experiences.
+            I&apos;m also a big animal lover, and I often find myself watching videos of cute animals (who doesn&apos;t love that?).
           </p>
           <p>
-            In addition to my hobbies, I'm always looking to expand my skillset and knowledge base.
-            Whether it's learning a new programming language or diving into a new subject area,
+            In addition to my hobbies, I&apos;m always looking to expand my skillset and knowledge base.
+            Whether it&apos;s learning a new programming language or diving into a new subject area,
             I love the challenge of mastering new skills and gaining fresh perspectives.
             Plus, all of that trivia knowledge comes in handy on game nights!
           </p>
