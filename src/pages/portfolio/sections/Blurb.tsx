@@ -7,7 +7,7 @@ const Blurb = () => {
     <div className="w-screen h-screen grid place-items-center p-2">
 
       <div className="relative isolate text-white w-10/12 md:w-2/4 font-mono">
-        <div className="z-0 bg-stone-300/20 backdrop-blur-lg p-4 ml-6 md:ml-0 w-auto rounded-lg flex-col flex gap-2">
+        <div className="z-0 bg-stone-300/20 backdrop-blur-lg py-6 px-8 ml-6 md:ml-0 w-auto rounded-lg flex-col flex gap-2">
           <p>
             Hey there!
           </p>
