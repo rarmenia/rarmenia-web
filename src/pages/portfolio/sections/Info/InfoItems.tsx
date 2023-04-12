@@ -32,7 +32,7 @@ const items: { icon: React.ReactNode, text: string, title: string }[] = [
 
 const InfoItems = () => {
   return (
-    <div className="flex flex-col gap-4 w-11/12 md:w-6/12">
+    <div className="flex flex-col gap-2 w-11/12 md:w-6/12">
       {items.map((item, index) => (
         <ComponentViewIntersection threshold={0.4} key={index} >
           {
