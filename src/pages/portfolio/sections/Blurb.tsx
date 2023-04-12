@@ -12,7 +12,7 @@ const Blurb = () => {
             Hey there! I&apos;m Rei, a software engineer based in the Capitol Region of New York.
           </p>
           <p>
-            specialize in full-stack development, with expertise in technologies like Angular, React, NodeJS and Python.
+            I specialize in full-stack development, with expertise in technologies like Angular, React, NodeJS and Python.
             But what really gets me excited is working on front-end projects that create beautiful and intuitive user experiences.
           </p>
           <p>
