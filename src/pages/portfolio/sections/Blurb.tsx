@@ -9,7 +9,7 @@ const Blurb = () => {
       <div className="relative isolate text-white w-10/12 md:w-3/4 font-mono">
         <div className="z-0 bg-stone-300/20 backdrop-blur-lg p-4 ml-4 w-auto rounded-lg flex-col flex gap-2">
           <p>
-            Hey there! I&apos;m Rei, a software engineer based in the Capitol Region of New York.
+            Hey there! I&apos;m Rei, a software engineer based in the Capital Region of New York.
           </p>
           <p>
             I specialize in full-stack development, with expertise in technologies like Angular, React, NodeJS and Python.
