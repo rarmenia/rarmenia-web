@@ -6,22 +6,24 @@ const Blurb = () => {
   return (
     <div className="w-screen h-screen grid place-items-center p-2">
 
-      <div className="relative isolate text-white w-10/12 md:w-3/4 font-mono">
+      <div className="relative isolate text-white w-10/12 md:w-2/4 font-mono">
         <div className="z-0 bg-stone-300/20 backdrop-blur-lg p-4 ml-6 md:ml-0 w-auto rounded-lg flex-col flex gap-2">
           <p>
-            Hey there! I&apos;m Rei, a software engineer based in the Capital Region of New York.
+            Hey there!
+          </p>
+          <p>I&apos;m Rei, a software engineer based in the Capital Region of New York.
           </p>
           <p>
             I specialize in full-stack development, with expertise in technologies like Angular, React, NodeJS and Python.
             But what really gets me excited is working on front-end projects that create beautiful and intuitive user experiences.
           </p>
           <p>
-            I graduated from Champlain College in Burlington, Vermont with a B.S. in Computer Science in 2018.
-            After completing my degree, I returned to my home area in 2019 to work for the State of New York Office of ITS supporting Housing and Community Renewal.
+            In 2018, I earned my B.S. in Computer Science from Champlain College in Burlington, VT.
+            After completing my degree, I returned to my home area in 2019 to work for the New York Office of ITS supporting Housing and Community Renewal.
           </p>
           <p>
             During the pandemic,
-            I had the privilege to work on several high-impact projects,
+            I had the privilege of working on several high-impact projects,
             including a web app that streamlined the process of applying for rental assistance and New York&apos;s Vaccine Scheduling tool.
           </p>
           <p>
@@ -36,8 +38,8 @@ const Blurb = () => {
             Plus, all of that trivia knowledge comes in handy on game nights!
           </p>
         </div>
-        <div className="absolute z-10 -left-8 md:-left-10 -bottom-4 bg-stone-300/20 backdrop-blur-lg rounded-full p-2" aria-hidden="true">
-          <ChatBubbleOvalLeftEllipsisIcon className="h-8" />
+        <div className="absolute z-10 -left-8 md:-left-14 -bottom-4 bg-stone-300/20 backdrop-blur-lg rounded-full p-2" aria-hidden="true">
+          <ChatBubbleOvalLeftEllipsisIcon className="h-8 -mt-0.5" />
         </div>
       </div>
 
