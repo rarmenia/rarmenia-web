@@ -1,11 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 interface Props {
   repeat?: boolean;
   threshold?: number;
   rootMargin?: string;
   root?: Document | Element | null | undefined;
-  children: (result: IntersectionResult) => JSX.Element;
+  children?: React.ReactNode | ((result: IntersectionResult) => JSX.Element);
+  updateState?: Dispatch<SetStateAction<IntersectionResult>>;
 }
 
 export interface IntersectionResult {
@@ -24,11 +25,17 @@ const ComponentViewIntersection = (props: Props) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIntersectionResult((current) => {
-          const next = {
+          const intersection = {
             isVisible: entry.isIntersecting,
             intersectionRatio: entry.intersectionRatio
           }
-          return props.repeat ? next : !current.isVisible ? next : current;
+
+          const next = props.repeat ? intersection : !current.isVisible ? intersection : current;
+          if (props.updateState) {
+            props.updateState(next);
+          }
+
+          return next;
         })
       },
       {
@@ -47,7 +54,7 @@ const ComponentViewIntersection = (props: Props) => {
 
   return (
     <div ref={parentRef}>
-      {props.children(intersectionResult)}
+      {props.children ? typeof props.children === 'function' ? props.children(intersectionResult) : props.children : <></>}
     </div>
   )
 

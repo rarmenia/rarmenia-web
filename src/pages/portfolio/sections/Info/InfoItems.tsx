@@ -1,6 +1,6 @@
-import { AcademicCapIcon, BriefcaseIcon, CakeIcon, IdentificationIcon, MapPinIcon, UserCircleIcon } from "@heroicons/react/24/outline";
-import InfoCard from "./InfoCard";
+import { AcademicCapIcon, BriefcaseIcon, IdentificationIcon, MapPinIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 import ComponentViewIntersection from "components/providers/ComponentViewIntersection";
+import InfoCard from "./InfoCard";
 
 const items: { icon: React.ReactNode, text: string, title: string }[] = [
   {
@@ -11,7 +11,7 @@ const items: { icon: React.ReactNode, text: string, title: string }[] = [
   {
     icon: <IdentificationIcon />,
     text: 'they/them',
-    title: 'Prounouns'
+    title: 'Pronouns'
   },
   {
     icon: <BriefcaseIcon />,
@@ -21,11 +21,11 @@ const items: { icon: React.ReactNode, text: string, title: string }[] = [
   {
     icon: <MapPinIcon />,
     text: 'Capitol Region, New York, USA',
-    title: 'Current Location'
+    title: 'Location'
   },
   {
     icon: <AcademicCapIcon />,
-    text: 'Champlain College - B.S. 2018',
+    text: 'Champlain College',
     title: 'Education'
   }
 ]
