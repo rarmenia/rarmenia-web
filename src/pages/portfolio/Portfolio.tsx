@@ -4,7 +4,7 @@ import { vimeo_link } from 'utils/vimeo';
 import PortfolioBackground from './PortfolioBackground';
 import HeroContent from './sections/Hero/HeroContent';
 import Info from './sections/Info/Info';
-import Blurb from './sections/Blurb';
+import Blurb from './sections/Blurb/Blurb';
 import PortfolioTopBar from './PortfolioTopBar';
 
 const Portfolio = () => {
@@ -26,13 +26,18 @@ const Portfolio = () => {
 
             {/* Ensure that HeroContent will appear in Screen Readers */}
             <div className="sr-only"><HeroContent opacity={0} translateY={0} /> </div>
-
             {/* Offset one Full Screen -> function as  HERO */}
             <div className="bg-transparent h-screen w-screen" />
 
-            <Info />
 
-            <Blurb />
+            <div className="flex flex-col gap-60 min-w-screen mb-20">
+
+              <Info />
+
+              <Blurb />
+            </div>
+
+
 
           </main>
         </div>
