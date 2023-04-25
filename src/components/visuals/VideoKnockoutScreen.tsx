@@ -1,5 +1,3 @@
-import ContentPlacer from "components/processors/ContentPlacer";
-import ScreenSize from "components/providers/ScreenSize";
 
 interface Props {
   src: string;

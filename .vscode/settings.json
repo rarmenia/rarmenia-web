@@ -8,5 +8,12 @@
     "**/Thumbs.db": true,
     "**/node_modules": true
   },
-  "explorerExclude.backup": {}
+  "explorerExclude.backup": {},
+  "cSpell.words": [
+    "contentlayer",
+    "extralight",
+    "heroicons",
+    "Hyperlegible",
+    "tailwindcss"
+  ]
 }
