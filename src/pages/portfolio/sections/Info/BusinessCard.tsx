@@ -59,7 +59,7 @@ const BusinessCard = (props: Props) => {
 
   return (
     <Transition
-      show={props.isVisible}
+      show={props.isVisible ?? false}
       enter="transition-opacity duration-700 ease-in-out"
       enterFrom="opacity-0"
       enterTo="opacity-100"

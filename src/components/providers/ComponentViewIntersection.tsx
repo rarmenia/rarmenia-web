@@ -50,6 +50,7 @@ const ComponentViewIntersection = (props: Props) => {
       observer.observe(parentRef.current);
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
