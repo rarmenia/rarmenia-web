@@ -41,9 +41,8 @@ const ZipperText = (props: Props) => {
   const render = () => (
     <>
       <span
-        className={`flex flex-row ${
-          props.center ? 'items-center text-center justify-center' : ''
-        }`}
+        className={`flex flex-row ${props.center ? 'items-center text-center justify-center' : ''
+          }`}
       >
         {props.words.map((word, wind) => {
           return (

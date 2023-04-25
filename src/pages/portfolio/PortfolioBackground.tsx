@@ -1,4 +1,4 @@
-import ScreenBackground from "components/visuals/ScreenBackground";
+import ScreenBackground from "@components/visuals/ScreenBackground";
 
 interface Props {
 
