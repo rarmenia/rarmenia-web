@@ -1,7 +1,7 @@
-import MappedProperty from 'components/processors/MappedProperty';
-import ScreenSize from 'components/providers/ScreenSize';
-import ScrollPosition from 'components/providers/ScrollPosition';
-import React, { } from 'react';
+import MappedProperty from "@components/processors/MappedProperty";
+import ScreenSize from "@components/providers/ScreenSize";
+import ScrollPosition from "@components/providers/ScrollPosition";
+
 
 
 const PortfolioTopBar = () => {

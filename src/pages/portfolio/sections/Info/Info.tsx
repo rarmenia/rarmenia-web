@@ -1,23 +1,36 @@
 import React from 'react';
-import InfoItems from './InfoItems';
-import ComponentViewIntersection from 'components/providers/ComponentViewIntersection';
 import Image from 'next/image'
+import ComponentViewIntersection from '@components/providers/ComponentViewIntersection';
+import GlassCard from '@components/cards/GlassCard';
+import { Me } from '@data/me';
+import { AcademicCapIcon, BriefcaseIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { locationString } from '@utils/location';
+import { allCopies } from 'contentlayer/generated';
+import { useMDXComponent } from 'next-contentlayer/hooks';
+import BusinessCard from './BusinessCard';
 
 
 
 const Info = () => {
+
+  const currentWork = Me.professional.work[0];
+  const currentTitle = currentWork.positions[0];
+
+  const edu = Me.education.undergrad;
+
+  const blurb = allCopies.find((blurb) => blurb.contentRef === 'main-blurb') ?? allCopies[0];
+
+  const MDXContent = useMDXComponent(blurb.body.code);
+
+
   return (
-    <div id='about' className='flex flex-col w-screen grid place-items-center'>
-      <div className="flex flex-col gap-8 items-center justify-center w-full">
-        <ComponentViewIntersection threshold={0.8} >
-          {(intersection) =>
-          (<div className={`rounded-full bg-amber-600/20 backdrop-blur-lg shadow-sm shadow-stone-900 aspect-square w-48 grid place-items-center overflow-hidden ${intersection.isVisible ? 'animate-fade-in' : 'opacity-0'}`} >
-            <Image src="/rei-portrait-square.jpeg" alt="profile" width={1800} height={1800} className=" h-full w-full grayscale hover:grayscale-0 hover:scale-[1.025] transition-all transition-700 ease-in-out" />
-          </div>)
-          }
-        </ComponentViewIntersection>
-        <InfoItems />
-      </div>
+    <div id='about' className='w-screen grid place-items-center'>
+
+      <ComponentViewIntersection>
+        {({ isVisible }) =>
+          <BusinessCard isVisible={isVisible} />
+        }
+      </ComponentViewIntersection>
     </div>
   );
 };

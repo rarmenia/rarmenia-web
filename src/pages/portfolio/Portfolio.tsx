@@ -1,10 +1,9 @@
 import React from 'react';
 import Hero from './sections/Hero/Hero';
-import { vimeo_link } from 'utils/vimeo';
+import { vimeo_link } from '@utils/vimeo';
 import PortfolioBackground from './PortfolioBackground';
 import HeroContent from './sections/Hero/HeroContent';
 import Info from './sections/Info/Info';
-import Blurb from './sections/Blurb/Blurb';
 import PortfolioTopBar from './PortfolioTopBar';
 
 const Portfolio = () => {
@@ -15,11 +14,12 @@ const Portfolio = () => {
       <div className="relative">
         <PortfolioBackground
           video={vimeo_link(
-            '697318636',
+            '385101859',
             { autoplay: 1, autopause: 0, muted: true, loop: 1, controls: 0, title: 0, byline: 0, portrait: 0, quality: '720p' }
           )}
           aspect={1.9 / 1}
           multiplyContent={<Hero />}
+          img='/background-still.png'
         />
         <div className="bg-transparent w-screen z-10 isolate py-2">
           <main className="w-full">
@@ -34,7 +34,6 @@ const Portfolio = () => {
 
               <Info />
 
-              <Blurb />
             </div>
 
 
