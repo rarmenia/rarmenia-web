@@ -70,13 +70,13 @@ const BusinessCard = (props: Props) => {
           <Image src="/rei-portrait-square.jpeg" alt="profile" width={1800} height={1800} className="overflow-hidden h-full aspect-square grayscale hover:grayscale-0 hover:scale-[1.025] transition-all transition-700 ease-in-out" />
         </div>
 
-        <div className="flex flex-col items-center md:items-start md:justify-evenly md:py-4 md:pl-4 md:pr-8 max-w-[20rem] text-white transition-all gap-2">
+        <div className="flex flex-col items-center md:items-start md:justify-evenly md:py-4 md:pl-4 md:pr-8 max-w-[20rem] text-white transition-all gap-6 md:gap-2">
           <NameSection />
           <div className="w-10/12 border-b border-white/40" />
           <GlanceInfo items={glance_items} />
           <div className="w-10/12 border-b border-white/40" />
           {/* <Quote /> */}
-          <FancyQuote className="text-xs/none font-d-sans p-2 border border-white/5 border-dashed flex flex-col gap-1">
+          <FancyQuote className="text-xs/none font-d-sans p-3 border border-white/5 border-dashed rounded-sm flex flex-col gap-1">
             <MDXContent />
           </FancyQuote>
         </div>
