@@ -1,6 +1,6 @@
-import ZipperText from "@components/ZipperText";
-import { Me } from "@data/me";
-import React from "react";
+import ZipperText from '@components/ZipperText';
+import { Me } from '@data/me';
+import React from 'react';
 const Describer = ({ describer }: { describer: string }) => {
 
   return (
@@ -12,8 +12,8 @@ const Describer = ({ describer }: { describer: string }) => {
 
 const Separator = () => {
   return (
-    <div className="border-b md:border-0 min-w-[50%] md:min-w-0">
-      <span className="md:inline hidden">-</span>
+    <div className='border-b md:border-0 min-w-[50%] md:min-w-0'>
+      <span className='md:inline hidden'>-</span>
     </div>
   )
 }
@@ -22,7 +22,7 @@ const Separator = () => {
 const HeroDescribers = () => {
 
   return (
-    <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 font-mono text-xs">
+    <div className='flex flex-col md:flex-row items-center gap-2 md:gap-4 font-mono text-xs'>
       {
         Me.professional.describers.map((describer, ind, arr) => (
           <React.Fragment key={ind}>

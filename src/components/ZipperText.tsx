@@ -49,7 +49,7 @@ const ZipperText = (props: Props) => {
             <span
               key={wind}
               className={`flex flex-row ${resolveStyle(word)}`}
-              aria-hidden="true"
+              aria-hidden='true'
             >
               {resolveWord(word)
                 .split('')
@@ -58,20 +58,20 @@ const ZipperText = (props: Props) => {
                     <span
                       key={cind}
                       className={getAnimation(wind, cind)}
-                      aria-hidden="true"
+                      aria-hidden='true'
                     >
                       {char}
                     </span>
                   );
                 })}
               {wind + 1 < props.words.length && (
-                <span aria-hidden="true">&nbsp;</span>
+                <span aria-hidden='true'>&nbsp;</span>
               )}
             </span>
           );
         })}
       </span>
-      <span className="sr-only">{resolveTextFull()}</span>
+      <span className='sr-only'>{resolveTextFull()}</span>
     </>
   );
 

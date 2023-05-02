@@ -10,7 +10,7 @@ const Hero = () => {
   const scrollOpacity = useTransform(scrollY, [0, 60], [1, 0])
 
   return (
-    <div aria-hidden="true">
+    <div aria-hidden='true'>
       <motion.div style={{ opacity: heroOpacity }}>
         <HeroContent />
       </motion.div>
