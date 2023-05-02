@@ -1,4 +1,4 @@
-import ZipperText from "@components/visuals/ZipperText";
+import ZipperText from "@components/ZipperText";
 import { Me } from "@data/me";
 import React from "react";
 const Describer = ({ describer }: { describer: string }) => {

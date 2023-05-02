@@ -1,4 +1,4 @@
-import ScreenBackground from "@components/visuals/ScreenBackground";
+import ScreenBackground from "@components/ScreenBackground";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 interface Props {
@@ -21,7 +21,7 @@ const PortfolioBackground = (props: Props) => {
   return (
 
     <div className="fixed h-screen w-screen z-0 isolate">
-      <div className="z-0 inset-0 absolute h-screen w-screen">
+      <div className="z-0 inset-0 absolute">
         <ScreenBackground video={props.video} img={props.img} aspectRatio={props.aspect} />
       </div>
 

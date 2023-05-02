@@ -5,6 +5,7 @@ import PortfolioBackground from './PortfolioBackground';
 import HeroContent from './sections/Hero/HeroContent';
 import Info from './sections/Info/Info';
 import PortfolioTopBar from './PortfolioTopBar';
+import Work from './sections/Work/Work';
 
 const Portfolio = () => {
 
@@ -19,20 +20,21 @@ const Portfolio = () => {
           )}
           aspect={1.9 / 1}
           multiplyContent={<Hero />}
-          img='/background-still.png'
+          img='/img/background-still.png'
         />
         <div className="bg-transparent w-screen z-10 isolate py-2">
-          <main className="w-full">
+          <main>
 
             {/* Ensure that HeroContent will appear in Screen Readers */}
             <div className="sr-only"><HeroContent /></div>
             {/* Offset one Full Screen -> function as  HERO */}
-            <div className="bg-transparent h-screen w-screen" />
+            <div className="bg-transparent h-screen" />
 
 
-            <div className="flex flex-col gap-60 min-w-screen mb-20">
+            <div className="flex flex-col gap-60 mb-20">
 
               <Info />
+              <Work />
 
             </div>
 

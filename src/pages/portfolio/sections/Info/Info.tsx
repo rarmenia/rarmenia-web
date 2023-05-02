@@ -1,18 +1,20 @@
-import ComponentViewIntersection from '@components/providers/ComponentViewIntersection';
+import useIntersection from '@hooks/useIntersection';
 import BusinessCard from './BusinessCard';
+import { useRef } from 'react';
 
 
 
 const Info = () => {
 
-  return (
-    <div id='about' className='w-screen grid place-items-center'>
+  const intersectionRef = useRef<HTMLDivElement>(null)
+  const intersecting = useIntersection(intersectionRef);
 
-      <ComponentViewIntersection>
-        {({ isVisible }) =>
-          <BusinessCard isVisible={isVisible} />
-        }
-      </ComponentViewIntersection>
+
+  return (
+    <div id='about' className='grid place-items-center'>
+      <div ref={intersectionRef} className='w-full flex items-center justify-center'>
+        <BusinessCard isVisible={intersecting?.isIntersecting ?? false} />
+      </div>
     </div>
   );
 };
