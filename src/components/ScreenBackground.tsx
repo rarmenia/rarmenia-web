@@ -1,5 +1,5 @@
-import ContentPlacer from "@components/ContentPlacer";
-import useScreenSize from "@hooks/useScreenSize";
+import ContentPlacer from '@components/ContentPlacer';
+import useScreenSize from '@hooks/useScreenSize';
 import Image from 'next/image';
 interface Props {
   aspectRatio: number;
@@ -15,7 +15,7 @@ const ScreenBackground = (props: Props) => {
     <ContentPlacer space={{ width, height }} aspect={props.aspectRatio ?? (16 / 9)}>
       {(dimOff) => (
         <>
-          {props.video && <object data={props.video} className="absolute" style={
+          {props.video && <object data={props.video} className='absolute' style={
             {
               ...dimOff,
               minHeight: dimOff.height,

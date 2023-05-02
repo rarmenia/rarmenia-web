@@ -12,7 +12,7 @@ const Portfolio = () => {
   return (
     <>
       <PortfolioTopBar />
-      <div className="relative">
+      <div className='relative'>
         <PortfolioBackground
           video={vimeo_link(
             '385101859',
@@ -22,16 +22,16 @@ const Portfolio = () => {
           multiplyContent={<Hero />}
           img='/img/background-still.png'
         />
-        <div className="bg-transparent w-screen z-10 isolate py-2">
+        <div className='bg-transparent w-screen z-10 isolate py-2'>
           <main>
 
             {/* Ensure that HeroContent will appear in Screen Readers */}
-            <div className="sr-only"><HeroContent /></div>
+            <div className='sr-only'><HeroContent /></div>
             {/* Offset one Full Screen -> function as  HERO */}
-            <div className="bg-transparent h-screen" />
+            <div className='bg-transparent h-screen' />
 
 
-            <div className="flex flex-col gap-60 mb-20">
+            <div className='flex flex-col gap-60 mb-20'>
 
               <Info />
               <Work />

@@ -1,2 +1,3 @@
 [*.{ts, tsx, js, jsx}]
 tab_width = 2
+quote_type = single
