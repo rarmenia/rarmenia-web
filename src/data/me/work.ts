@@ -1,4 +1,6 @@
-export const WorkExperience = [
+import { Workplace } from '@models/Workplace';
+
+export const WorkExperience: Workplace[] = [
   {
     employer: [
       'NYS ITS',
@@ -6,7 +8,12 @@ export const WorkExperience = [
     ],
     location: [['U.S.', 'United States'], ['NY', 'New York'], 'Albany'],
     frame: ['2019-08-22'],
-
+    cover: {
+      src: '/img/albany-capitol.jpg',
+      width: 1920,
+      height: 1080,
+      alt: 'Albany NY Capitol Building',
+    },
     teams: [
       {
         name: 'HCR Business Solutions',
@@ -37,6 +44,17 @@ export const WorkExperience = [
       },
     ],
 
-    projects: [],
+    projects: [
+      {
+        name: ['General Agency Support'],
+        frame: ['2019-08-22'],
+        technologies: {
+          frontend: ['angular', 'typescript', 'html', 'css', 'tailwindcss'],
+          backend: ['.net', 'c#', 'swagger'],
+          database: ['mssql'],
+          misc: [],
+        },
+      },
+    ],
   },
 ];
