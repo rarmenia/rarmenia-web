@@ -1,4 +1,4 @@
-import { Workplace } from '@models/Workplace';
+import { Workplace } from '@models/workplace';
 
 export const WorkExperience: Workplace[] = [
   {
@@ -29,7 +29,7 @@ export const WorkExperience: Workplace[] = [
       {
         title: [
           'ITS 3 PROG',
-          'Information Technology Specialist 3 Programming',
+          'Information Technology Specialist 3 (Programming)',
         ],
         frame: ['2022-12'],
         duties: [],

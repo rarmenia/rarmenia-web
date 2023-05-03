@@ -4,7 +4,7 @@ import GlassCard from '@components/GlassCard';
 import { Me } from '@data/me';
 import { Transition } from '@headlessui/react';
 import { AcademicCapIcon, BriefcaseIcon, MapPinIcon } from '@heroicons/react/24/outline';
-import { locationString } from '@utils/location';
+import { locationString } from '@utils/data-decode';
 import { allCopies } from 'contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import Image from 'next/image';
@@ -64,7 +64,7 @@ const BusinessCard = (props: Props) => {
       enterFrom='opacity-0'
       enterTo='opacity-100'
     >
-      <GlassCard className='w-11/12 md:w-3/4 overflow-hidden rounded-md text-white flex flex-col md:flex-row gap-2 border-0 group'>
+      <GlassCard className='w-11/12 md:w-3/4 overflow-hidden rounded-md text-white flex flex-col md:flex-row gap-2 group'>
         <div className='h-60 w-60 md:min-h-[25rem] md:h-auto md:w-4/12 md:min-w-[18rem] relative isolate rounded-full self-center md:self-start my-8 md:my-0 md:rounded-none md:rounded-r-md overflow-hidden shadow-sm shadow-stone-950/40'>
           <div className='absolute inset-0 -z-10'>
             <Image src='/img/rei-portrait-square.jpeg' alt='Rei' fill={true} className='object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.025] transition-all' />
