@@ -1,9 +1,10 @@
 import GlassCard from '@components/GlassCard';
+import { Tab } from '@headlessui/react';
 import { BuildingOffice2Icon } from '@heroicons/react/24/outline';
-import { Workplace } from '@models/Workplace';
 import { Position } from '@models/position';
+import { Workplace } from '@models/workplace';
+import { fancyFrame } from '@utils/data-decode';
 import Image from 'next/image';
-import { Tab } from '@headlessui/react'
 
 interface Props {
   work: Workplace
@@ -21,10 +22,8 @@ const WorkImageCover = ({ work }: Props) => {
     <div className='h-full w-full flex flex-col items-center justify-center bg-stone-950/30 backdrop-blur-[1px] group-hover:backdrop-blur-0 p-4'>
       <BuildingOffice2Icon className='h-10' />
       <div className='text-lg/none font-mono'><abbr title={work.employer[1] ?? work.employer[0]}>{work.employer[0]}</abbr></div>
-      <div className='flex flex-row text-xs/none items-center my-2 gap-2 italic opacity-80'>
-        <div>{work.frame[0]}</div>
-        <div>-</div>
-        <div>{work.frame[1] ?? 'Present'}</div>
+      <div className='flex flex-row text-xs/none items-center my-2 gap-2 italic text-white/80'>
+        {fancyFrame(work.frame)}
       </div>
     </div>
   );
@@ -45,11 +44,14 @@ const WorkInformation = ({ work }: Props) => {
   const tabSelected = [tabClasses, selectedClasses].join(' ');
   const tabUnselected = [tabClasses, unselectedClasses].join(' ');
 
-  const tabs = ['About', 'Positions', 'Projects'].slice(work.aboutTarget ? 0 : 1);
+  const tabs = ['About', 'Positions', 'Projects'].slice(work.blurbTarget ? 0 : 1);
 
   const Position = ({ position }: { position: Position }) => (
-    <div>
-
+    <div className='bg-stone-300/20 text-white p-4 w-11/12 rounded-md flex flex-col gap-4'>
+      <div className='flex flex-col gap-0'>
+        <div className='text-base/none'>{position.title[1] ?? position.title[0]}</div>
+        <div className='text-sm/none text-white/80 italic'>{fancyFrame(position.frame)}</div>
+      </div>
     </div>
   )
 
@@ -62,8 +64,10 @@ const WorkInformation = ({ work }: Props) => {
           ))}
         </Tab.List>
         <Tab.Panels className='w-full grow bg-stone-950/60 rounded-md backdrop-blur-lg min-h-[20rem] max-h-[20rem] overflow-auto p-1 grid place-items-center'>
-          {work.aboutTarget && (<Tab.Panel>ABOUT</Tab.Panel>)}
-          <Tab.Panel>POSITIONS</Tab.Panel>
+          {work.blurbTarget && (<Tab.Panel>ABOUT</Tab.Panel>)}
+          <Tab.Panel className='flex flex-col gap-4 items-center w-full'>
+            {work.positions.map((position, index) => <Position key={index} {...{ position }} />)}
+          </Tab.Panel>
           <Tab.Panel>PROJECTS</Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
@@ -74,7 +78,7 @@ const WorkInformation = ({ work }: Props) => {
 const WorkCard = ({ work }: Props) => {
 
   return (
-    <GlassCard className='w-11/12 md:w-3/4 overflow-hidden rounded-md text-white flex flex-col md:flex-row border-0 group'>
+    <GlassCard className='w-11/12 md:w-3/4 overflow-hidden rounded-md text-white flex flex-col md:flex-row group'>
 
       <WorkImageCover {...{ work }} />
       <WorkInformation {...{ work }} />

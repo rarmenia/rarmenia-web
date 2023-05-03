@@ -7,7 +7,7 @@ export interface Workplace {
   employer: [string] | [string, string];
   location: (string | string[])[];
   frame: [string] | [string, string];
-  aboutTarget?: string;
+  blurbTarget?: string;
   cover: ImageProps;
   teams: Team[];
   positions: Position[];
