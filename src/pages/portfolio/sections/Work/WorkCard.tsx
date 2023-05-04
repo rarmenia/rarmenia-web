@@ -13,9 +13,15 @@ interface Props {
 const WorkImageCover = ({ work }: Props) => {
 
   const WorkImage = () => (
-    <div className='absolute inset-0 -z-10'>
-      <Image src={work.cover.src} alt={work.cover.alt ?? 'workplace img'} fill={true} className='object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.025] transition-all' />
-    </div>
+    <>
+      {work && work.cover &&
+        (
+          <div className='absolute inset-0 -z-10'>
+            <Image src={work.cover?.src ?? ''} alt={work.cover?.alt ?? 'workplace img'} fill={true} className='object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.025] transition-all' />
+          </div>
+        )
+      }
+    </>
   );
 
   const InfoCover = () => (
