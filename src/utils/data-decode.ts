@@ -10,7 +10,8 @@ export function locationString(
   }, '');
 }
 
-export function fancyFrame(frame: [string] | [string, string]): string {
+export function fancyFrame(frame?: [string] | [string, string]): string {
+  if (!frame) return '';
   return `${fancyDate(frame[0])} - ${fancyDate(frame[1])}`;
 }
 
