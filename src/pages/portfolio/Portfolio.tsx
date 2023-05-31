@@ -6,6 +6,7 @@ import HeroContent from './sections/Hero/HeroContent';
 import Info from './sections/Info/Info';
 import PortfolioTopBar from './PortfolioTopBar';
 import Work from './sections/Work/Work';
+import { Me } from '@data/me';
 
 const Portfolio = () => {
 
@@ -34,7 +35,7 @@ const Portfolio = () => {
             <div className='flex flex-col gap-60 mb-20'>
 
               <Info />
-              <Work />
+              <Work workplaces={Me.professional.work} />
 
             </div>
 

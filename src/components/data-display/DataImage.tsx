@@ -4,6 +4,7 @@ import Image from "next/image";
 
 interface Props {
   image?: ImageInfo;
+  className?: string;
 }
 
 const DataImage = (props: Props) => {
@@ -13,7 +14,7 @@ const DataImage = (props: Props) => {
       {
         props.image && (
           <>
-            <Image {...props.image} />
+            <Image {...props.image} className={props.className ?? ''} />
           </>
         )
       }
