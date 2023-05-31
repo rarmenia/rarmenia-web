@@ -10,8 +10,7 @@ export const WorkExperience: Workplace[] = [
     frame: ['2019-08-22'],
     cover: {
       src: '/img/albany-capitol.jpg',
-      width: 1920,
-      height: 1080,
+      fill: true,
       alt: 'Albany NY Capitol Building',
     },
     teams: [
@@ -37,7 +36,7 @@ export const WorkExperience: Workplace[] = [
       {
         title: [
           'ITS 2 PROG',
-          'Information Technology Specialist 2 Programming',
+          'Information Technology Specialist 2 (Programming)',
         ],
         frame: ['2019-08-22', '2022-12'],
         duties: [],
