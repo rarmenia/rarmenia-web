@@ -11,7 +11,7 @@ export interface GlanceItemProps {
 
 export const GlanceItem = (props: GlanceItemProps) => {
 
-  const itemDefaultClasses = 'flex flex-row text-xs items-center gap-2';
+  const itemDefaultClasses = 'flex flex-row text-xs items-center gap-3';
   const iconDefaultClasses = 'h-4 w-4';
 
   return (

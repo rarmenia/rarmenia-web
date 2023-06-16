@@ -1,4 +1,6 @@
-export const WorkExperience = [
+import { Workplace } from '@models/workplace';
+
+export const WorkExperience: Workplace[] = [
   {
     employer: [
       'NYS ITS',
@@ -6,7 +8,11 @@ export const WorkExperience = [
     ],
     location: [['U.S.', 'United States'], ['NY', 'New York'], 'Albany'],
     frame: ['2019-08-22'],
-
+    cover: {
+      src: '/img/albany-capitol.jpg',
+      fill: true,
+      alt: 'Albany NY Capitol Building',
+    },
     teams: [
       {
         name: 'HCR Business Solutions',
@@ -22,7 +28,7 @@ export const WorkExperience = [
       {
         title: [
           'ITS 3 PROG',
-          'Information Technology Specialist 3 Programming',
+          'Information Technology Specialist 3 (Programming)',
         ],
         frame: ['2022-12'],
         duties: [],
@@ -30,13 +36,24 @@ export const WorkExperience = [
       {
         title: [
           'ITS 2 PROG',
-          'Information Technology Specialist 2 Programming',
+          'Information Technology Specialist 2 (Programming)',
         ],
         frame: ['2019-08-22', '2022-12'],
         duties: [],
       },
     ],
 
-    projects: [],
+    projects: [
+      {
+        name: ['General Agency Support'],
+        frame: ['2019-08-22'],
+        technologies: {
+          frontend: ['angular', 'typescript', 'html', 'css', 'tailwindcss'],
+          backend: ['.net', 'c#', 'swagger'],
+          database: ['mssql'],
+          misc: [],
+        },
+      },
+    ],
   },
 ];

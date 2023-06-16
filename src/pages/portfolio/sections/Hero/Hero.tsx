@@ -1,39 +1,25 @@
 
-import MappedProperty from '@components/processors/MappedProperty';
-import ScreenSize from '@components/providers/ScreenSize';
-import ScrollPosition from '@components/providers/ScrollPosition';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import HeroContent from './HeroContent';
 import HeroScroll from './HeroScroll';
+import useScreenSize from '@hooks/useScreenSize';
 const Hero = () => {
+  const { scrollY } = useScroll();
+  const { height } = useScreenSize();
+  const heroOpacity = useTransform(scrollY, [0, height / 2.75], [1, 0]);
+  const scrollOpacity = useTransform(scrollY, [0, 60], [1, 0])
+
   return (
-    <>
-      <ScrollPosition>
-        {(scroll) => (
-          <ScreenSize>
-            {(size) => (
-              <div aria-hidden="true">
-                <HeroContent opacity={100} translateY={-(scroll / 2.2)} />
-                {/* <MappedProperty
-                  active={[0 + (size.height / 16), size.height / 2]}
-                  target={[100, 0]}
-                  current={scroll}
-                >
-                  {(track) => <HeroContent opacity={track} translateY={track === 0 ? -800 : ((100 - track) * 1.8) * -1} />}
-                </MappedProperty> */}
-                <MappedProperty
-                  active={[0, size.height / 12]}
-                  target={[100, 0]}
-                  current={scroll}
-                >
-                  {(opacity) => <HeroScroll opacity={opacity} />}
-                </MappedProperty>
-              </div>
-            )}
-          </ScreenSize>
-        )}
-      </ScrollPosition>
-    </>
+    <div aria-hidden='true'>
+      <motion.div style={{ opacity: heroOpacity }}>
+        <HeroContent />
+      </motion.div>
+      <motion.div style={{ opacity: scrollOpacity }}>
+        <HeroScroll />
+      </motion.div>
+    </div>
   );
+
 };
 
 export default Hero;

@@ -6,7 +6,7 @@ interface Props {
 const GlassCard = (props: Props) => {
 
 
-  const baseStyle = 'bg-stone-300/20 backdrop-blur-lg border border-stone-100/5 shadow-sm shadow'
+  const baseStyle = 'bg-stone-300/25 backdrop-blur-lg shadow-sm shadow'
 
   return (
     <div className={[baseStyle, props.className].join(' ')}>
