@@ -3,7 +3,7 @@ import MenuItem from "./MenuItem";
 import { usePathname } from "next/navigation";
 
 type MenuProps = {
-  menuItems: MenuItemConfig[];
+  menuItems: readonly MenuItemConfig[];
   exactMatch?: boolean;
 }
 
