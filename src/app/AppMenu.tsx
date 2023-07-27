@@ -40,28 +40,3 @@ const AppMenu = (props: AppMenuProps) => {
 
 export default AppMenu;
 
-
-
-// {
-//   !props.filteredPaths.includes(pathname) && (
-//     <>
-//     </>
-//         {/* <div className="fixed top-0 left-0 h-screen min-h-screen w-screen min-w-screen flex flex-col-reverse md:flex-row md:items-start"> */ }
-//   {/*   <div className="w-full h-32 rounded-t-md shadow-md md:w-2/12 md:h-full bg-stone-900/90 grid place-items-center gap-2"> */ }
-//   {/*     <div className="w-full flex flex-row items-center justify-center md:hidden"> */ }
-//   {/*       <div className="px-4 py-1 bg-sky-200 bg-opacity-10 rounded-md shadow text-sky-500 text-base font-mono tracking-tight"> */ }
-//   {/*         {links.filter(l => pathname.startsWith(l.link))[0]?.text ?? '???'} */ }
-//   {/*       </div> */ }
-//   {/*     </div> */ }
-//   {/*     <div className="py-2 md:py-4 px-4 rounded-md bg-stone-950/30 overflow-hidden flex flex-row md:flex-col items-center gap-8"> */ }
-//   {/*       <div className="flex flex-row items-center md:flex-col"> */ }
-//   {/*         {links.map((link, ind) => { */ }
-//   {/*           const isActive = pathname.startsWith(link.link); */ }
-//   {/*           return <MenuItem destination={link.link} label={link.text} icon={link.icon} active={isActive} key={ind} /> */ }
-//   {/*         })} */ }
-//   {/*       </div> */ }
-//   {/*     </div> */ }
-//   {/*   </div> */ }
-//   {/* </div> */ }
-//       )
-// }
