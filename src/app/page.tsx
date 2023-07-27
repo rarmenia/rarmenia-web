@@ -27,7 +27,7 @@ export default function Landing() {
             </div>
           </div>
           <div>
-            <ActionButton state="DEFAULT" onClick={() => { handleNextAction() }} clickFilter='force-all'>
+            <ActionButton state="DEFAULT" onClick={() => { handleNextAction() }} clickFilter='default-only'>
               <div>Continue</div>
             </ActionButton>
           </div>

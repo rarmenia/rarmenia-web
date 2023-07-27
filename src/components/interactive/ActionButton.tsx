@@ -3,7 +3,7 @@
 import { ArrowRightIcon, ArrowPathIcon, CheckIcon, XMarkIcon, MinusIcon } from "@heroicons/react/20/solid";
 
 export type ActionButtonState = 'DEFAULT' | 'LOADING' | 'SUCCESS' | 'ERROR' | 'DISABLED';
-export type ActionButtonClickFilter = 'force-all' | 'all' | 'not-loading' | 'default-only' | 'none';
+export type ActionButtonClickFilter = 'force' | 'all' | 'not-loading' | 'default-only' | 'none';
 
 type ActionButtonProps = {
   state: ActionButtonState;
@@ -19,14 +19,14 @@ type ButtonStyling = {
 }
 
 const click_map: { [key in ActionButtonClickFilter]: ActionButtonState[] } = {
-  "force-all": [],
+  "force": ['DEFAULT', 'LOADING', 'SUCCESS', 'ERROR', 'DISABLED'],
   all: ['DEFAULT', 'LOADING', 'SUCCESS', 'ERROR'],
   "not-loading": ['DEFAULT', 'SUCCESS', 'ERROR'],
   "default-only": ['DEFAULT'],
   none: [],
 }
 
-const style_profiles: { [key in ActionButtonState]: ButtonStyling } = {
+const style_profiles: { [state in ActionButtonState]: ButtonStyling } = {
   'DEFAULT': {
     buttonClasses: 'bg-sky-600 hover:bg-sky-400',
     icon: <ArrowRightIcon className="h-5" />,
@@ -60,8 +60,9 @@ const ActionButton = (props: ActionButtonProps) => {
   const handleClick = () => {
     const clickFilter: ActionButtonClickFilter = props.clickFilter ?? 'default-only';
     if (!props.onClick) return;
-    if (clickFilter === 'force-all') {
+    if (clickFilter === 'force') {
       props.onClick({ currentState: props.state });
+      return;
     }
     if (props.state === 'DISABLED') return;
     if (clickFilter === 'none') return;
