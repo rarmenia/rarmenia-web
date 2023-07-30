@@ -17,10 +17,6 @@ const jbMono = JetBrains_Mono({
   variable: '--font-jb-mono',
 });
 
-type Link = { link: string, text: string, icon: React.ReactNode }
-
-
-
 
 export default function RootLayout({
   children,
