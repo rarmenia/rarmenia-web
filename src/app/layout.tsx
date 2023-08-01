@@ -38,7 +38,6 @@ export default function RootLayout({
           <div className="absolute inset-0 bg-stone-950/50"></div>
         </div>
         <div className="z-0">{children}</div>
-        <AppMenu filteredPaths={['/']} />
       </body>
     </html>
   )
