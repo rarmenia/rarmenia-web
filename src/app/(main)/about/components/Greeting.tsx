@@ -4,15 +4,14 @@ import { TypeAnimation } from "react-type-animation";
 
 const Greeting = () => {
 
-  const delay = 1250;
-  const deltaCeil = 300;
   const describers = ['Web Dev', 'Software Engineer', 'Language Lover', 'Experience Creator', 'Techie'];
-  const sequence = describers.map(_ => ( // Map to [describer, delay]
-    [_, // Describer Word
-      delay + (Math.random() * deltaCeil) // Delay with some randomness to help things feel more natural
-    ]
-  )).flat(); // flatten to [a, delay, b, delay, ...] for TypeAnimation
 
+  const BASE_DELAY_MS: number = 1250;
+  const DELAY_VARIANCE_CAP_MS: number = 300;
+  const getDelayWithVariation = () => BASE_DELAY_MS + Math.floor((Math.random() * DELAY_VARIANCE_CAP_MS));
+  const pairDescriberWithTiming = (describer: string) => [describer, getDelayWithVariation()];
+
+  const sequence = describers.map(pairDescriberWithTiming).flat()
 
   return (
     <div className="ml-4 flex flex-col">
