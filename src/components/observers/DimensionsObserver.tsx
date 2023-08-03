@@ -1,8 +1,10 @@
-import { Dimensions } from "@/types/dimensions"
+import { Optional } from "@/types/optional";
 import React, { useState, useRef, useEffect } from "react";
 
+export type Dimensions = { width: number; height: number }
+
 type DimensionProps = {
-  children: (dimension?: Dimensions) => React.ReactNode; 
+  children: (dimension?: Dimensions) => React.ReactNode;
 }
 
 
@@ -13,16 +15,16 @@ type DimensionProps = {
  */
 const DimensionsObserver = (props: DimensionProps) => {
 
-  const [dimensions, setDimensions] = useState<Dimensions | undefined>(undefined);
+  const [dimensions, setDimensions] = useState<Optional<Dimensions>>(undefined);
   const containerRef: React.RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
- 
+
   const updateDimensions = () => {
     if (!containerRef.current) { return; }
-    const {clientWidth, clientHeight} = containerRef.current;
-    setDimensions({width: clientWidth, height: clientHeight});
+    const { clientWidth, clientHeight } = containerRef.current;
+    setDimensions({ width: clientWidth, height: clientHeight });
   }
 
-  useEffect( () => {
+  useEffect(() => {
     updateDimensions();
 
     window.addEventListener('resize', updateDimensions);
@@ -34,7 +36,7 @@ const DimensionsObserver = (props: DimensionProps) => {
   },)
 
   return (
-    <div className="h-full w-full" ref={containerRef}> 
+    <div className="h-full w-full" ref={containerRef}>
       {props.children(dimensions)}
     </div>
   );
