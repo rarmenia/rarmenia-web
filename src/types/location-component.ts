@@ -34,7 +34,7 @@ export type LocationComponentType = 'STREET_ADDRESS' |
   'TRAIN_STATION' |
   'TRANSIT_CENTER';
 
-export type LocationComponent = {
+export type LocationComponentStorage = {
   long: string;
   short: string;
   type: LocationComponentType;

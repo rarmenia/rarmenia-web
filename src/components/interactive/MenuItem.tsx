@@ -1,7 +1,13 @@
 'use client'
 
-import { MenuItemConfig } from "@/types/menu-item-config";
+
 import { useRouter } from "next/navigation";
+
+export type MenuItemConfig = {
+  destination: string;
+  icon: React.ReactNode;
+  label: string;
+}
 
 type MenuItemProps = MenuItemConfig & { active?: boolean };
 

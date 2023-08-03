@@ -1,5 +1,5 @@
-import { LocationComponent } from "./location-component"
+import { LocationComponentStorage } from "./location-component"
 
-export type Location = {
-  component: Array<LocationComponent>;
+export type LocationStorgae = {
+  component: Array<LocationComponentStorage>;
 }
