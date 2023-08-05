@@ -1,7 +1,6 @@
 import './globals.css'
 import Image from 'next/image';
 import { Karla, Merriweather, JetBrains_Mono } from 'next/font/google'
-import AppMenu from './AppMenu';
 
 const karla = Karla({
   subsets: ['latin'],
@@ -34,7 +33,7 @@ export default function RootLayout({
               * TODO - Three JS  canvas, fill screen, canvas is a mesh Gradient
             */
           }
-          <Image src="/mesh.png" alt="mesh gradient" objectFit='cover' fill={true} />
+          <Image src="/mesh.png" alt="mesh gradient" fill={true} />
           <div className="absolute inset-0 bg-stone-950/50"></div>
         </div>
         <div className="z-0">{children}</div>
