@@ -15,7 +15,7 @@ export default function Landing() {
   return (
     <div className="h-screen w-screen overflow-hidden grid place-items-center">
       <GlassCard>
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-8 p-8">
           <div className="flex flex-col gap-4 py-8 px-2">
             <div className="flex flex-col uppercase items-center gap-[-0.5rem] font-sans tracking-tighter text-sky-50 font-semibold">
               <div className="text-4xl">Rei</div>

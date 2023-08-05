@@ -1,21 +1,26 @@
 import GlassCard from "@/components/containers/GlassCard";
-import { LocationStorgae } from "@/types/location";
+import Timeframe from "@/components/display/Timeframe";
+import { TimeframeStorge } from "@/types/timeframe";
+import Location from '@/components/display/Location'
 
 type WorkplaceEmployerProps = {
   name: string,
-  location: LocationStorgae,
+  location: string,
+  timeframe: TimeframeStorge,
 }
 
 const WorkplaceEmployer = (props: WorkplaceEmployerProps) => {
 
   return (
     <GlassCard>
-      <div className="flex flex-col p-4">
-        <div className="flex flex-row space-between">
-          <div>Employer Name</div>
-          <div>Timeframe</div>
+      <div className="flex flex-col p-2">
+        <div className="flex flex-row w-full justify-between items-center">
+          <div>{props.name}</div>
+          <div><Timeframe {...props.timeframe} hideDay /></div>
         </div>
-        <div>Location</div>
+        <div>
+          <Location location={props.location} />
+        </div>
       </div>
     </GlassCard>
   )
