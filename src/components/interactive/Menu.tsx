@@ -1,5 +1,4 @@
-import { MenuItemConfig } from "@/types/menu-item-config";
-import MenuItem from "./MenuItem";
+import MenuItem, { MenuItemConfig } from "./MenuItem";
 import { usePathname } from "next/navigation";
 
 type MenuProps = {
