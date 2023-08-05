@@ -1,13 +1,13 @@
 import { WorkplaceStorage } from "@/types/work/workplace";
-import WorkplaceEmployer from "./WorkplaceEmployer";
 import Position from "./Position";
+import Employer from "./Employer";
 
 type WorkplaceProps = { workplace: WorkplaceStorage }
 
 const Workplace = ({ workplace }: WorkplaceProps) => {
   return (
     <div className="flex flex-col gap-2 w-fit">
-      <WorkplaceEmployer
+      <Employer
         name={workplace.name}
         timeframe={workplace.timeframe}
         location={workplace.location}
