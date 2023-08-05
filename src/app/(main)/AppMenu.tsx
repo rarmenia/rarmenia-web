@@ -1,8 +1,8 @@
 'use client'
-import { MenuItemConfig } from "@/types/menu-item-config";
 import { usePathname } from "next/navigation";
 import { DocumentIcon, HomeIcon, IdentificationIcon, InformationCircleIcon, Squares2X2Icon } from '@heroicons/react/20/solid';
 import Menu from "@/components/interactive/Menu";
+import { MenuItemConfig } from "@/components/interactive/MenuItem";
 
 const LINKS: readonly MenuItemConfig[] = [
   { destination: '/home', label: 'Home', icon: <HomeIcon className="h-5" /> },
