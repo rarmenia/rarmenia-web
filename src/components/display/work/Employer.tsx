@@ -1,15 +1,15 @@
 import GlassCard from "@/components/containers/GlassCard";
-import Timeframe from "@/components/display/Timeframe";
 import { TimeframeStorge } from "@/types/timeframe";
-import Location from '@/components/display/Location'
+import Location from "../information/Location";
+import Timeframe from "../information/Timeframe";
 
-type WorkplaceEmployerProps = {
+type EmployerProps = {
   name: string,
   location: string,
   timeframe: TimeframeStorge,
 }
 
-const WorkplaceEmployer = (props: WorkplaceEmployerProps) => {
+const Employer = (props: EmployerProps) => {
 
   return (
     <GlassCard>
@@ -27,4 +27,4 @@ const WorkplaceEmployer = (props: WorkplaceEmployerProps) => {
 
 }
 
-export default WorkplaceEmployer;
+export default Employer;

@@ -1,7 +1,7 @@
 import GlassCard from "@/components/containers/GlassCard";
-import Timeframe from "@/components/display/Timeframe";
 import { PositionStorge } from "@/types/work/position"
 import { SparklesIcon } from "@heroicons/react/24/solid";
+import Timeframe from "../information/Timeframe";
 
 type PositionProps = {
   position: PositionStorge;

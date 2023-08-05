@@ -1,7 +1,7 @@
 import Section from "@/components/containers/Section";
-import Greeting from "./components/Greeting";
-import Workplace from "./components/Workplace";
+import Greeting from "./Greeting";
 import { WORK_EXPERIENCE } from "@/data/work-experience";
+import Workplace from "@/components/display/work/Workplace";
 
 const About = () => {
 
