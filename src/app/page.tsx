@@ -1,14 +1,17 @@
 "use client"
 
 import GlassCard from "@/components/containers/GlassCard";
-import ActionButton from "@/components/interactive/ActionButton";
+import ActionButton, { ActionButtonState } from "@/components/interactive/ActionButton";
 import { useRouter } from 'next/navigation';
+import { useState } from "react";
 
 export default function Landing() {
 
   const router = useRouter();
+  const [buttonState, setButtonState] = useState<ActionButtonState>("DEFAULT")
 
   const handleNextAction = () => {
+    setButtonState(() => "LOADING")
     router.push('/home')
   }
 
@@ -27,7 +30,7 @@ export default function Landing() {
             </div>
           </div>
           <div>
-            <ActionButton state="DEFAULT" onClick={() => { handleNextAction() }} clickFilter='default-only'>
+            <ActionButton state={buttonState} onClick={() => { handleNextAction() }} clickFilter='default-only'>
               <div>Continue</div>
             </ActionButton>
           </div>
