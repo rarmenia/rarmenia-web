@@ -17,9 +17,9 @@ const Greeting = () => {
     <div className="ml-4 flex flex-col">
       <div className="font-sans font-semibold text-white text-4xl leading-none tracking-tight">Hi,</div>
       <div className="font-sans font-semibold text-white text-4xl leading-none tracking-tight">I&apos;m <span className="text-sky-400">Rei</span>!</div>
-      <div className="font-sans font-semibold text-white text-4xl leading-none tracking-tight flex flex-row">
+      <div className="font-sans font-semibold text-white text-4xl leading-none tracking-tight flex flex-row items-center">
         <span>A&nbsp;</span>
-        <div className="text-sky-400 font-mono text-3xl flex flex-row">
+        <div className="text-sky-400 font-mono text-2xl flex flex-row flex-wrap">
           <div>&lt;{/*<*/}</div>
           <TypeAnimation
             sequence={sequence}

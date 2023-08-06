@@ -19,8 +19,8 @@ const KeyExperience = ({ display }: { display: string }) => {
 const Position = ({ position }: PositionProps) => {
   return (
     <GlassCard>
-      <div className="w-96 h-32 p-2 flex flex-col gap-2">
-        <div className="flex flex-row w-full justify-between">
+      <div className="w-[22rem] h-32 p-2 flex flex-col gap-2">
+        <div className="flex flex-row w-full justify-between items-center">
           <div>{position.title}</div>
           <div><Timeframe {...position.timeframe} hideDay /></div>
         </div>
