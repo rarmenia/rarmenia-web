@@ -3,6 +3,8 @@ import Greeting from "./Greeting";
 import { WORK_EXPERIENCE } from "@/data/work-experience";
 import Workplace from "@/components/display/work/Workplace";
 import HorizontalArea from "@/components/containers/HorizontalArea";
+import { SKILLS } from "@/data/skills";
+import SkillAreaCard from "@/components/display/skill/SkillAreaCard";
 
 const About = () => {
 
@@ -19,11 +21,12 @@ const About = () => {
       <Section title="What I Do...">
         <HorizontalArea>
           <div className="flex flex-row gap-4 p-4">
-
+            {SKILLS.map((skill, key) =>
+              <div className="w-fit"><SkillAreaCard {...{ skill, key }} /></div>
+            )}
           </div>
         </HorizontalArea>
       </Section>
-
     </div>
   );
 
