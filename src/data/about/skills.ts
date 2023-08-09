@@ -1,4 +1,4 @@
-import { SkillAreaStorage } from "@/types/skill/skill-area";
+import { SkillAreaStorage } from "@/types/about/skill/skill-area";
 
 export const SKILLS: SkillAreaStorage[] = [
   {

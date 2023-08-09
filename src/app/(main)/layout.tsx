@@ -9,7 +9,7 @@ const MainLayout = ({ children }: Props) => {
   return (
     <>
       <div className="w-screen min-h-screen flex flex-col items-center bg-stone-900/80">
-        <div className="bg-stone-900/60 backdrop-blur-md min-h-screen w-full md:w-10/12 lg:w-9/12 md:shadow-md border-x border-x-white/10">
+        <div className="bg-stone-900/60 backdrop-blur-md min-h-screen w-full md:w-10/12 lg:w-9/12 md:shadow-lg border-x border-x-white/10 pb-40">
           {children}
         </div>
       </div>

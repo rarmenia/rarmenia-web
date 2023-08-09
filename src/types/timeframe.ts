@@ -1,4 +1,4 @@
-export type TimeframeStorge = {
+export type TimeframeStorage = {
 
   start: Date;
   end?: Date;
