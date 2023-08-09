@@ -1,15 +1,15 @@
 import GlassCard from "@/components/containers/GlassCard"
-import { SkillAreaStorage } from "@/types/skill/skill-area";
-import { SkillAreaIconType } from "@/types/skill/skill-area-icon-type";
 import { CloudIcon, ComputerDesktopIcon, CpuChipIcon, RectangleGroupIcon, UserGroupIcon } from "@heroicons/react/20/solid"
 import KeyExperience from "../information/KeyExperience";
+import { SkillAreaIconType } from "@/types/about/skill/skill-area-icon-type";
+import { SkillAreaStorage } from "@/types/about/skill/skill-area";
 
 const ICON_MAP: { [key in SkillAreaIconType]: React.ReactNode } = {
   'people': <UserGroupIcon className="h-6" />,
   'monitor': <ComputerDesktopIcon className="h-6" />,
   'cpu': <CpuChipIcon className="h-6" />,
   'cloud': <CloudIcon className="h-6" />,
-  'rects': <RectangleGroupIcon className="" />
+  'rects': <RectangleGroupIcon className="h-6" />
 } as const;
 
 type SkillAreaCardProps = {

@@ -1,5 +1,5 @@
 import GlassCard from "@/components/containers/GlassCard";
-import { PositionStorge } from "@/types/work/position"
+import { PositionStorge } from "@/types/about/work/position"
 import Timeframe from "../information/Timeframe";
 import KeyExperience from "../information/KeyExperience";
 

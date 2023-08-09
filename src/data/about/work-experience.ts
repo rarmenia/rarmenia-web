@@ -1,4 +1,4 @@
-import { WorkplaceStorage } from "@/types/work/workplace";
+import { WorkplaceStorage } from "@/types/about/work/workplace";
 
 export const WORK_EXPERIENCE: WorkplaceStorage[] = [
   {

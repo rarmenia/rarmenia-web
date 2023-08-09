@@ -1,8 +1,8 @@
-import { TimeframeStorge } from "@/types/timeframe";
-import { DateStorage, dateSeparator } from "@/functions/date-separator";
+import { DateStorage, dateSeparator } from "@/functions/date";
+import { TimeframeStorage } from "@/types/timeframe";
 import { ClockIcon } from "@heroicons/react/20/solid";
 
-type TimeframeProps = TimeframeStorge & { separator?: string, hideDay?: boolean }
+type TimeframeProps = TimeframeStorage & { separator?: string, hideDay?: boolean }
 
 const Timeframe = (props: TimeframeProps) => {
 

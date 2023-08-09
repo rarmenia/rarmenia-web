@@ -1,8 +1,8 @@
-import { TimeframeStorge } from "../timeframe";
+import { TimeframeStorage } from "@/types/timeframe";
 
 export type PositionStorge = {
   title: string;
-  timeframe: TimeframeStorge;
+  timeframe: TimeframeStorage;
   keyExperience: string;
   description: string;
 }

@@ -1,4 +1,4 @@
-import { WorkplaceStorage } from "@/types/work/workplace";
+import { WorkplaceStorage } from "@/types/about/work/workplace";
 import Position from "./Position";
 import Employer from "./Employer";
 
@@ -7,11 +7,7 @@ type WorkplaceProps = { workplace: WorkplaceStorage }
 const Workplace = ({ workplace }: WorkplaceProps) => {
   return (
     <div className="flex flex-col gap-2 w-fit">
-      <Employer
-        name={workplace.name}
-        timeframe={workplace.timeframe}
-        location={workplace.location}
-      />
+      <Employer {...workplace} />
       <div className="flex flex-row gap-2">
         {workplace.positions.map((position, ind) => (
           <Position position={position} key={ind} />
