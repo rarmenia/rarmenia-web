@@ -5,10 +5,10 @@ import Menu from "@/components/interactive/Menu";
 import { MenuItemConfig } from "@/components/interactive/MenuItem";
 
 const LINKS: readonly MenuItemConfig[] = [
-  { destination: '/home', label: 'Home', icon: <HomeIcon className="h-5" /> },
+  // { destination: '/home', label: 'Home', icon: <HomeIcon className="h-5" /> },
   { destination: '/about', label: 'About', icon: <InformationCircleIcon className="h-5" /> },
-  { destination: '/projects', label: 'Projects', icon: <Squares2X2Icon className="h-5" /> },
-  { destination: '/blog', label: 'Blog', icon: <DocumentIcon className="h-5" /> },
+  // { destination: '/projects', label: 'Projects', icon: <Squares2X2Icon className="h-5" /> },
+  // { destination: '/blog', label: 'Blog', icon: <DocumentIcon className="h-5" /> },
   { destination: '/card', label: 'Card', icon: <IdentificationIcon className="h-5" /> },
 ] as const;
 
@@ -32,4 +32,3 @@ const AppMenu = () => {
 }
 
 export default AppMenu;
-
