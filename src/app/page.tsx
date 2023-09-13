@@ -1,7 +1,7 @@
 "use client"
 
 import GlassCard from "@/components/containers/GlassCard";
-import ActionButton, { ActionButtonState } from "@/components/interactive/ActionButton";
+import ActionButton, { ActionButtonState } from "@/components/buttons/ActionButton";
 import { useRouter } from 'next/navigation';
 import { useState } from "react";
 

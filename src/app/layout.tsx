@@ -26,6 +26,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <title>Rei Armenia</title>
+      </head>
       <body className={[karla.variable, merriweather.variable, jbMono.variable, 'font-sans'].join(' ')}>
         <div className="-z-30 w-screen h-screen fixed isolate bg-stone-950 font-sans">
           {

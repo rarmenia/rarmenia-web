@@ -1,8 +1,18 @@
-import AppMenu from "./AppMenu";
+import AppNav from "@/components/app-nav/AppNav";
+import { AppNavItemConfig } from "@/components/app-nav/AppNavItemConfig";
+import { DocumentIcon, HomeIcon, IdentificationIcon, InformationCircleIcon, Squares2X2Icon } from '@heroicons/react/20/solid';
 
 type Props = {
   children: React.ReactNode;
 }
+
+const NAV_ITEMS: AppNavItemConfig[] = [
+  // { destination: '/home', label: 'Home', icon: <HomeIcon className="h-5" /> },
+  { destination: '/about', label: 'About', icon: <InformationCircleIcon className="h-4" /> },
+  // { destination: '/projects', label: 'Projects', icon: <Squares2X2Icon className="h-5" /> },
+  { destination: '/blog', label: 'Blog', icon: <DocumentIcon className="h-4" /> },
+  { destination: '/card', label: 'Business Card', icon: <IdentificationIcon className="h-4" /> },
+];
 
 const MainLayout = ({ children }: Props) => {
 
@@ -14,7 +24,7 @@ const MainLayout = ({ children }: Props) => {
         </div>
       </div>
       <div className="w-screen fixed bottom-0 left-0 grid place-items-center">
-        <AppMenu />
+        <AppNav items={NAV_ITEMS} />
       </div>
     </>
   );
