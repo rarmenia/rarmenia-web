@@ -16,7 +16,7 @@ const BlogPost = ({ params }: BlogPostProps) => {
     <BlogPostResolver postId={params.postId}>
       {
         (response) => (
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center gap-0.5">
             <PostHeader response={response} />
             <PostBody response={response} />
           </div>
