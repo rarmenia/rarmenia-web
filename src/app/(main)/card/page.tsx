@@ -1,4 +1,4 @@
-import BusinessCard from "@/components/display/card-contact/BusinessCard";
+import BusinessCard from "./components/BusinessCard";
 
 const VirtualBusinessCard = (
 ) => {

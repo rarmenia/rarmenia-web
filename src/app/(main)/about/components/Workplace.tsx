@@ -1,6 +1,6 @@
-import { WorkplaceStorage } from "@/types/about/work/workplace";
 import Position from "./Position";
 import Employer from "./Employer";
+import { WorkplaceStorage } from "@/types";
 
 type WorkplaceProps = { workplace: WorkplaceStorage }
 

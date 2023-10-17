@@ -1,10 +1,4 @@
-export type DateStorage = {
-  day: number;
-  month: number;
-  year: number;
-  weekDay: number;
-}
-
+import { DateStorage } from "@/types";
 
 export function dateSeparator(date: Date): DateStorage {
 

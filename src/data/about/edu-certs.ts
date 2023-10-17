@@ -1,4 +1,4 @@
-import { EduCertStorage } from "@/types/about/edu-cert/edu-cert";
+import { EduCertStorage } from "@/types";
 
 export const EDU_CERT: EduCertStorage[] = [
   {

@@ -1,5 +1,5 @@
-import { SeriesInfo } from '@/components/resolvers/blog/types/PostResolverResponse'
 import React from 'react'
+import { SeriesInfo } from '../../../resolvers/BlogPostResolver';
 
 type SeriesNavigatorProps = {
   navigation: SeriesInfo

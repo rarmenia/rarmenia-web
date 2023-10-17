@@ -1,9 +1,8 @@
-import GlassCard from "@/components/containers/GlassCard";
-import { EduCertStorage } from "@/types/about/edu-cert/edu-cert"
-import { EduCertType } from "@/types/about/edu-cert/edu-cert-type";
+import Timeframe from "@/components/information/Timeframe";
+import Location from "@/components/information/Location";
+import { EduCertStorage, EduCertType } from "@/types";
 import { AcademicCapIcon, BeakerIcon, DocumentIcon } from "@heroicons/react/20/solid";
-import Location from '@/components/display/information/Location'
-import Timeframe from "../information/Timeframe";
+import GlassCard from "@/components/containers/GlassCard";
 
 type EduCertCardProps = {
   eduCert: EduCertStorage;

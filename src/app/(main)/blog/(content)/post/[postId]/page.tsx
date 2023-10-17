@@ -1,7 +1,7 @@
 'use client'
-import BlogPostResolver from "@/components/resolvers/blog/post/BlogPostResolver"
 import PostHeader from "../rendering/PostHeader"
 import PostBody from "../rendering/PostBody"
+import BlogPostResolver from "../../../resolvers/BlogPostResolver"
 
 type BlogPostProps = {
 

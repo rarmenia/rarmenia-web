@@ -1,8 +1,7 @@
 import GlassCard from "@/components/containers/GlassCard";
-import Location from "../information/Location";
-import Timeframe from "../information/Timeframe";
-import { WorkplaceStorage } from "@/types/about/work/workplace";
-
+import Timeframe from "@/components/information/Timeframe";
+import Location from "@/components/information/Location"
+import { WorkplaceStorage } from "@/types";
 
 const Employer = (props: WorkplaceStorage) => {
 

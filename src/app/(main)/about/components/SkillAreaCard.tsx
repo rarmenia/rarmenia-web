@@ -1,8 +1,7 @@
-import GlassCard from "@/components/containers/GlassCard"
 import { CloudIcon, ComputerDesktopIcon, CpuChipIcon, RectangleGroupIcon, UserGroupIcon } from "@heroicons/react/20/solid"
-import KeyExperience from "../information/KeyExperience";
-import { SkillAreaIconType } from "@/types/about/skill/skill-area-icon-type";
-import { SkillAreaStorage } from "@/types/about/skill/skill-area";
+import KeyExperience from "./KeyExperience";
+import GlassCard from "@/components/containers/GlassCard";
+import { SkillAreaIconType, SkillAreaStorage } from "@/types";
 
 const ICON_MAP: { [key in SkillAreaIconType]: React.ReactNode } = {
   'people': <UserGroupIcon className="h-6" />,
@@ -31,7 +30,7 @@ const SkillAreaCard = ({ skill }: SkillAreaCardProps) => {
           {skill.other.map((single, ind) => <li key={ind} className="text-xs text-white/60 font-mono col-span-1">{single}</li>)}
         </ul>
       </div>
-    </GlassCard >
+    </GlassCard>
   )
 }
 

@@ -1,4 +1,5 @@
-import { DateStorage, dateSeparator } from "@/functions/date";
+import { dateSeparator } from "@/functions/date";
+import { DateStorage } from "@/types";
 import { TimeframeStorage } from "@/types/timeframe";
 import { ClockIcon } from "@heroicons/react/20/solid";
 

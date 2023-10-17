@@ -1,1 +1,6 @@
-export type SeriesNavigation = { first: string, last: string, prev?: string, next?: string }
+export type SeriesNavigation = {
+  first: string;
+  last: string;
+  prev?: string;
+  next?: string;
+}

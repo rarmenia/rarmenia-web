@@ -1,5 +1,5 @@
-import { PostResolverResponse, PostSuccessResponse } from "@/components/resolvers/blog/types/PostResolverResponse";
 import { CalendarIcon, EyeIcon } from "@heroicons/react/20/solid";
+import { PostResolverResponse, PostSuccessResponse } from "../../../resolvers/BlogPostResolver";
 
 type PostHeaderProps = {
   response: PostResolverResponse;

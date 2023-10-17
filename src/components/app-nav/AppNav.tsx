@@ -1,7 +1,6 @@
 'use client'
-import React, { useEffect, useState } from 'react'
-import { AppNavItemConfig, getDestination } from './AppNavItemConfig'
-import AppNavItem from './AppNavItem';
+
+import AppNavItem, { AppNavItemConfig, getDestination } from './AppNavItem';
 import { usePathname } from 'next/navigation';
 
 interface AppNavProps {

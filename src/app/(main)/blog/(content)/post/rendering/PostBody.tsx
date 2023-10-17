@@ -1,9 +1,7 @@
 
-import { PostErrorResponse, PostResolverResponse, PostSuccessResponse } from "@/components/resolvers/blog/types/PostResolverResponse";
-import { AsyncDataStatus } from "@/types/async-data-status"
 import { ArrowPathIcon } from "@heroicons/react/20/solid";
-import Link from "next/link";
 import SeriesNavigator from "./SeriesNavigator";
+import { PostErrorResponse, PostResolverResponse, PostSuccessResponse } from "../../../resolvers/BlogPostResolver";
 
 type PostBodyProps = {
   response: PostResolverResponse

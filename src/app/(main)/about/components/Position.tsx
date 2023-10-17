@@ -1,7 +1,7 @@
 import GlassCard from "@/components/containers/GlassCard";
-import { PositionStorge } from "@/types/about/work/position"
-import Timeframe from "../information/Timeframe";
-import KeyExperience from "../information/KeyExperience";
+import { PositionStorge } from "@/types";
+import Timeframe from "@/components/information/Timeframe";
+import KeyExperience from "./KeyExperience";
 
 type PositionProps = {
   position: PositionStorge;

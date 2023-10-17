@@ -1,6 +1,22 @@
 import React from 'react'
-import { AppNavItemConfig, getDestination } from './AppNavItemConfig';
 import Link from 'next/link';
+
+export type AppNavItemConfig = {
+
+  icon: React.ReactNode;
+  destination: string | string[];
+  label: string;
+
+}
+
+
+export function getDestination(itemConfig: AppNavItemConfig): string {
+
+  if (!Array.isArray(itemConfig.destination)) return itemConfig.destination;
+
+  return itemConfig.destination.join('/');
+
+}
 
 interface AppNavItemProps {
   config: AppNavItemConfig;

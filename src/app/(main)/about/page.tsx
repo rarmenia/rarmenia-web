@@ -1,10 +1,10 @@
 import Section from "@/components/containers/Section";
 import Greeting from "./Greeting";
-import Workplace from "@/components/display/work/Workplace";
 import HorizontalArea from "@/components/containers/HorizontalArea";
-import SkillAreaCard from "@/components/display/skill/SkillAreaCard";
 import { SKILLS, WORK_EXPERIENCE, EDU_CERT } from "@/data/about";
-import EduCertCard from "@/components/display/edu-cert/EduCertCard";
+import Workplace from "./components/Workplace";
+import SkillAreaCard from "./components/SkillAreaCard";
+import EduCertCard from "./components/EduCertCard";
 
 const sections = [
   {

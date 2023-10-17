@@ -1,4 +1,4 @@
-import { SkillAreaIconType } from "./skill-area-icon-type"
+export type SkillAreaIconType = 'people' | 'monitor' | 'cpu' | 'cloud' | 'rects';
 
 export type SkillAreaStorage = {
 

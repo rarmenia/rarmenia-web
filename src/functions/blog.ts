@@ -1,5 +1,5 @@
 import { Post, allPosts } from ".contentlayer/generated"
-import { SeriesNavigation } from "@/types/series-navigation";
+import { SeriesNavigation } from "@/types";
 
 export const getPost = (id: string): Post | undefined => allPosts.find(post => post.id === id);
 

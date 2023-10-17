@@ -1,5 +1,5 @@
 import AppNav from "@/components/app-nav/AppNav";
-import { AppNavItemConfig } from "@/components/app-nav/AppNavItemConfig";
+import { AppNavItemConfig } from "@/components/app-nav/AppNavItem";
 import { DocumentIcon, HomeIcon, IdentificationIcon, InformationCircleIcon, Squares2X2Icon } from '@heroicons/react/20/solid';
 
 type Props = {
