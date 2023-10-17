@@ -1,5 +1,6 @@
 import { CalendarIcon, EyeIcon } from "@heroicons/react/20/solid";
 import { PostResolverResponse, PostSuccessResponse } from "../../../resolvers/BlogPostResolver";
+import Link from "next/link";
 
 type PostHeaderProps = {
   response: PostResolverResponse;
@@ -24,8 +25,9 @@ const PostHeaderContent = ({ data }: PostSuccessResponse) => {
         <div className='text-xl font-semibold'>{data.post.title}</div>
         {data.post.series && data.series && (
           <div className='flex flex-row text-xs justify-between italic font-light text-white/70'>
-            <div>Series:{data.post.series.title}</div>
-            <div>{data.post.series.part}/{data.series.count === -1 ? '??' : data.series.count}</div>
+            <Link href={`/blog/series/${data.post.series.id}`} title="Go to Series" className="underline text-yellow-400/80">Series:{data.post.series.title}</Link>
+
+            <div>{data.post.series.part}/{data.series.complete ? `${data.series.count}` : `?(${data.series.count})`}</div>
           </div>
         )}
         <div className='flex flex-row justify-between'>

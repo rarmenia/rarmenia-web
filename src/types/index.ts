@@ -3,6 +3,7 @@ export * from './edu-cert-type';
 export * from './edu-cert';
 export * from './optional';
 export * from './position';
+export * from './post-resolver';
 export * from './series-navigation';
 export * from './skill-area';
 export * from './timeframe';
