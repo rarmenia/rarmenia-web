@@ -16,5 +16,5 @@ export const getNavigation = (post: Post, series: Post[]): SeriesNavigation => (
   first: series[0].id,
   last: series[series.length - 1].id,
   next: series.at(post.series?.part ?? 1)?.id,
-  prev: series.at((post.series?.part ?? 1) - 1)?.id,
+  prev: series.at((post.series?.part ?? 1) - 2)?.id,
 })

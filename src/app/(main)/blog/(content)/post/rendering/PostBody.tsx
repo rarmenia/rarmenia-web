@@ -26,7 +26,7 @@ const PostBodyContent = ({ data }: PostSuccessResponse) => {
       <div className={`${SHARED_STYLES} bg-stone-900/80 ${showNav ? 'rounded-b-none' : 'rounded-b-lg'}`}>
         <div className="[&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: data.post.body.html }} />
       </div>
-      {data.series && showNav && (<SeriesNavigator navigation={data.series} />)}
+      {data.series && showNav && (<SeriesNavigator navigation={data.series} currentPart={data.post.series?.part ?? 0} currentId={data.post.id} />)}
     </>
   );
 }
