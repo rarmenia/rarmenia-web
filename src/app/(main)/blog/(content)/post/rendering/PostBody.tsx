@@ -1,7 +1,7 @@
 
 import { ArrowPathIcon } from "@heroicons/react/20/solid";
 import SeriesNavigator from "./SeriesNavigator";
-import { PostErrorResponse, PostResolverResponse, PostSuccessResponse } from "../../../resolvers/BlogPostResolver";
+import { PostErrorResponse, PostResolverResponse, PostSuccessResponse } from "@/types";
 
 type PostBodyProps = {
   response: PostResolverResponse

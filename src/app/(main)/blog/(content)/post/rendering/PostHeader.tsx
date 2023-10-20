@@ -1,5 +1,5 @@
+import { PostResolverResponse, PostSuccessResponse } from "@/types";
 import { CalendarIcon, EyeIcon } from "@heroicons/react/20/solid";
-import { PostResolverResponse, PostSuccessResponse } from "../../../resolvers/BlogPostResolver";
 import Link from "next/link";
 
 type PostHeaderProps = {

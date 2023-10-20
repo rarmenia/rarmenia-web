@@ -1,7 +1,7 @@
 import React from 'react'
-import { SeriesInfo } from '../../../resolvers/BlogPostResolver';
 import Link from 'next/link';
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
+import { SeriesInfo } from '@/types';
 
 type SeriesNavigatorProps = {
   navigation: SeriesInfo,
