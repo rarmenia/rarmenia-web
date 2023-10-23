@@ -1,5 +1,6 @@
 import { Post, allPosts } from ".contentlayer/generated"
 import { PostData, SeriesNavigation } from "@/types";
+import { SeriesSuccessData } from "@/types/series-resolver";
 
 export const getPost = async (id: string): Promise<Post | undefined> => allPosts.find(post => post.id === id);
 
@@ -7,7 +8,8 @@ export const getPostData = async (id: string): Promise<PostData | null | undefin
   const post = await getPost(id);
   if (!post) return null;
   if (post.series) {
-    const seriesPosts = await getSeries(post.series.id);
+    const seriesData = await getSeries(post.series.id);
+    const seriesPosts = seriesData?.posts;
     if (seriesPosts && seriesPosts.length > 0) {
       const complete = seriesPosts.at(-1)?.series?.ends ?? false;
       const count = seriesPosts.length;
@@ -20,11 +22,20 @@ export const getPostData = async (id: string): Promise<PostData | null | undefin
 
 }
 
-/**
- * @returns Sorted Post[] by series part asc
-  * 
-*/
-export const getSeries = async (seriesId: string): Promise<Post[] | null | undefined> => allPosts.filter(post => post.series?.id === seriesId)
+export const getSeries = async (seriesId: string): Promise<SeriesSuccessData | null | undefined> => {
+  const posts = allPosts
+    .filter(post => post.series?.id === seriesId)
+    .sort((a, b) => (a.series?.part ?? 0) - (b.series?.part ?? 0))
+
+  return posts && posts.length > 1 ? {
+    posts,
+    series: {
+      title: posts[0]?.series?.title ?? '',
+      parts: posts.length,
+      complete: posts.at(-1)?.series?.ends ?? false,
+    }
+  } : null;
+}
 
 
 export const getNavigation = (post: Post, series: Post[]): SeriesNavigation => ({

@@ -15,9 +15,9 @@ const BlogSeries = (props: BlogSeriesProps) => {
     <BlogSeriesResolver seriesId={props.params.seriesId}>
       {
         (response) => (
-          <div className="flex flex-col items-center gap-0.5">
-            <SeriesHeader />
-            <SeriesContent />
+          <div className="flex flex-col items-center gap-4">
+            <SeriesHeader response={response} />
+            <SeriesContent response={response} />
           </div>
         )
       }

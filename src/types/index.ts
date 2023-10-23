@@ -5,6 +5,7 @@ export * from './optional';
 export * from './position';
 export * from './post-resolver';
 export * from './series-navigation';
+export * from './series-resolver';
 export * from './skill-area';
 export * from './timeframe';
 export * from './workplace';

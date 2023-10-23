@@ -21,7 +21,7 @@ const BlogPostResolver = (props: BlogPostResolverProps) => {
 
   useEffect(() => {
     getPostData(props.postId).then(response => setPostData(response))
-  }, []);
+  }, [])
 
   return <>{props.children(constructPostResponse(postData))}</>;
 };
